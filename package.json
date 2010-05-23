@@ -1,4 +1,6 @@
 {
+    "name": "infolister",
+    "fullName": "InfoLister",
     "version": "0.10.4a", 
     "license": "MPL/GPL/LGPL", 
     "author": "Nickolay Ponomarev (asqueella@gmail.com)", 
