@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!--
+   - Part of InfoLister by Nickolay Ponomarev <asqueella@gmail.com>
+   - Copyright (c) 2004-2005 Nickolay Ponomarev.
+   - See the license.txt included in this package for more information.
+   -->
+
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+<?xml-stylesheet href="chrome://infolister/skin/infolister.css" type="text/css"?>
+
+<!DOCTYPE window SYSTEM "chrome://infolister/locale/infolister.dtd">
+
+<window xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="infolister" windowtype="infolister:infowindow"
+        title="&title;" width="500" height="450"
+        persist="screenX screenY width height sizemode"
+        onload="InfoLister.onLoad(event);" onunload="InfoLister.onUnload(event);">
+        
+<script src="common.js"/>
+<script src="components/format.js"/>
+<script src="components/collect.js"/>
+<script src="components/addonsProvider.js"/>
+<script src="utils/observer.js"/>
+<script src="infolister.js"/>
+<script src="thunderbird.js"/>
+
+<commandset id="maincommands">
+  <command id="cmd_close" oncommand="window.close();"/>
+</commandset>
+
+<keyset id="mainkeys">
+  <key id="key_close" keycode="VK_ESCAPE" command="cmd_close"/>
+</keyset>
+
+
+<groupbox flex="1">
+  <vbox class="il-pad">
+    <description>&desc;</description>
+    <description ffoxonly="true">&hint.about.info;</description>
+  </vbox>
+
+  <iframe id="infoFrame" flex="1" type="content-primary" src="chrome://infolister/locale/loading.html" 
+      onclick="InfoLister.onFrameClick(event);"/>
+</groupbox>
+<separator/>
+
+<!-- Buttons -->
+<hbox class="il-pad">
+  <button id="button-save" label="&save;"
+          oncommand="InfoLister.pickAndSave();"/>
+  <button id="button-upload" label="&upload;"
+          oncommand="InfoListerService.uploadInfo();" notintb="true"/>
+  <button id="button-prefs" label="&prefs;"
+          oncommand="InfoLister.openOptions();"/>
+  <spacer flex="1"/>
+  <button id="button-close" label="&close;" command="cmd_close"/>
+</hbox>
+
+</window>

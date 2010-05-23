@@ -1,0 +1,13 @@
+<!ENTITY ftp.remotegroup.label "远程文件设置">
+<!ENTITY ftp.user.label "用户名：">
+<!ENTITY ftp.user.accesskey "U">
+<!ENTITY ftp.password.label "密码：">
+<!ENTITY ftp.password.accesskey "P">
+<!ENTITY ftp.host.label "主机：">
+<!ENTITY ftp.host.accesskey "H">
+<!ENTITY ftp.path.label "路径：">
+<!ENTITY ftp.path.accesskey "a">
+<!ENTITY autoupload.label "退出时自动上传">
+<!ENTITY autoupload.accesskey "x">
+<!ENTITY uploadnow.label "立即上传">
+<!ENTITY uploadnow.accesskey "n">

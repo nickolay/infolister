@@ -1,0 +1,16 @@
+text/plain;XPI List;# 這個清單是已安裝項目的 XPI 安裝連結列表，
+# 相信這在製作大量安裝工具時很有用。
+# 某些擴充套件可能找不到連結。如果 InfoLister 找不到連結，
+# 通常就是該套件沒有設定好更新機制。
+
+[[# %lastupd%
+]][[# %useragent%
+]]
+{{extension:#%name% %version% %disabled-text%
+%xpiLink% 
+}}
+}}
+#### Themes
+{{theme:#%name% %version% %selected-text%
+%xpiLink% 
+}}

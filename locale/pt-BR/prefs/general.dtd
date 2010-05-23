@@ -1,0 +1,11 @@
+<!ENTITY autosave.label "Salvar automaticamente para um arquivo local na inicialização:">
+<!ENTITY autosave.accesskey "A">
+<!ENTITY clear.label "Limpar">
+<!ENTITY clear.accesskey "L">
+<!ENTITY browse.label "Buscar...">
+<!ENTITY browse.accesskey "B">
+<!ENTITY menuitem.label "Exibir item de menu Ferramentas">
+<!ENTITY menuitem.accesskey "x">
+<!ENTITY showinfo.label "Exibir Informação">
+<!ENTITY showinfo.accesskey "x">
+<!ENTITY showinfo.description "Você também pode acessar a janela principal do InfoLister atráves de um botão na barra de ferramentas, disponível no menu Exibir &gt; Barras de Ferramentas &gt; Personalizar...">

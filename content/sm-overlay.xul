@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://infolister/skin/toolbar-button.css" type="text/css"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://infolister/locale/overlay.dtd">
+
+<overlay id="infolister-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" >
+
+  <script src="common.js"/>
+  <script src="overlay.js"/>
+
+  <menupopup id="taskPopup">
+    <menuitem id="infolister-menuitem" oncommand="InfoListerOverlay.openInfoLister(event);" 
+              label="&brandname.label;" accesskey="&brandname.accesskey;"/>
+  </menupopup>
+
+  <toolbarpalette id="BrowserToolbarPalette">
+    <toolbarbutton id="infolister-button" class="toolbarbutton-1"
+                   tooltiptext="&toolbarbutton.tooltip;"
+                   label="&brandname.label;"
+                   oncommand="InfoListerOverlay.onToolbarButtonCommandFx(event);"
+                   onclick="checkForMiddleClick(this, event);"
+                   contextmenu="infolister-context-menu"
+                   />
+  </toolbarpalette>
+
+  <window id="main-window">
+    <popupset id="mainPopupSet">
+      <popup id="infolister-context-menu">
+        <menuitem id="infolister-tbctx-open" label="&openinfo.label;" default="true"
+                  oncommand="InfoListerWindows.open(InfoListerWindows.Info);"/>
+        <menuseparator/>
+        <menuitem id="infolister-tbctx-options" label="&openoptions.label;"
+                  oncommand="InfoListerWindows.open(InfoListerWindows.Prefs);"/>
+        <menuitem id="infolister-tbctx-upload" label="&upload.label;"
+                  oncommand="InfoListerService.uploadInfo();"/>
+      </popup>
+    </popupset>
+  </window>
+
+</overlay>

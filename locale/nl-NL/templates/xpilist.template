@@ -1,0 +1,16 @@
+text/plain;XPI List;# Dit is een overzicht van koppelingen naar
+# XPI's van de geïnstalleerde onderdelen.
+# Dit is mogelijk te gebruiken met MassInstaller.
+# Het is niet mogelijk de XPI's te vinden voor sommige extensies.
+# Indien InfoLister geen koppeling kan vinden, betekent dat normaal
+# gesproken dat de extensie geen geldig update-manifest heeft.
+[[# %lastupd%
+]][[# %useragent%
+]]
+#### Extensies
+{{extension:#%name% %version% %disabled-text%
+%xpiLink% 
+}}
+#### Thema's
+{{theme:#%name% %version% %selected-text%
+%xpiLink% 

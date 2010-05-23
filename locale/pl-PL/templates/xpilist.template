@@ -1,0 +1,16 @@
+text/plain;Lista plików *.xpi;# To jest lista odnośników do plików *.xpi zainstalowanych rozszerzeń.
+# Można jej używać z rozszerzeniem Mass Installer.
+# Czasami nie można odszukać odnośników do plików *.xpi niektórych rozszerzeń.
+# Jeżeli InfoLister nie może odnaleźć odnośnika, zazwyczaj oznacza to, 
+# że rozszerzenie ma nieprawidłowy manifest uaktualniania.
+
+[[# %lastupd%
+]][[# %useragent%
+]]
+#### Rozszerzenia
+{{extension:#%name% %version% %disabled-text%
+%xpiLink% 
+}}
+#### Motywy
+{{theme:#%name% %version% %selected-text%
+%xpiLink% 

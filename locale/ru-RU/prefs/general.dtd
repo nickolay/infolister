@@ -1,0 +1,11 @@
+<!ENTITY autosave.label "Автоматически сохранять в файл на диске при запуске:">
+<!ENTITY autosave.accesskey "а">
+<!ENTITY clear.label "Очистить">
+<!ENTITY clear.accesskey "ч">
+<!ENTITY browse.label "Обзор...">
+<!ENTITY browse.accesskey "О">
+<!ENTITY menuitem.label "Отобразить в меню Инструменты">
+<!ENTITY menuitem.accesskey "м">
+<!ENTITY showinfo.label "Отобразить информацию">
+<!ENTITY showinfo.accesskey "м">
+<!ENTITY showinfo.description "Также вы можете открыть InfoLister через панель инструментов (для этого откройте пункт меню Вид &gt; Панели Инструментов &gt; Настроить...)">

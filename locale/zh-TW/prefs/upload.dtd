@@ -1,0 +1,13 @@
+<!ENTITY ftp.remotegroup.label "遠端檔案設定">
+<!ENTITY ftp.user.label "使用者名稱:">
+<!ENTITY ftp.user.accesskey "U">
+<!ENTITY ftp.password.label "密碼:">
+<!ENTITY ftp.password.accesskey "P">
+<!ENTITY ftp.host.label "主機:">
+<!ENTITY ftp.host.accesskey "H">
+<!ENTITY ftp.path.label "路徑:">
+<!ENTITY ftp.path.accesskey "a">
+<!ENTITY autoupload.label "離開時自動上傳">
+<!ENTITY autoupload.accesskey "x">
+<!ENTITY uploadnow.label "立即上傳">
+<!ENTITY uploadnow.accesskey "n">

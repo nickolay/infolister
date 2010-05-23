@@ -1,0 +1,13 @@
+<!ENTITY ftp.remotegroup.label "Remote bestandsinstellingen">
+<!ENTITY ftp.user.label "Gebruikersnaam:">
+<!ENTITY ftp.user.accesskey "G">
+<!ENTITY ftp.password.label "Wachtwoord:">
+<!ENTITY ftp.password.accesskey "W">
+<!ENTITY ftp.host.label "Host:">
+<!ENTITY ftp.host.accesskey "H">
+<!ENTITY ftp.path.label "Pad:">
+<!ENTITY ftp.path.accesskey "P">
+<!ENTITY autoupload.label "Automatisch uploaden bij afsluiten">
+<!ENTITY autoupload.accesskey "A">
+<!ENTITY uploadnow.label "Nu uploaden">
+<!ENTITY uploadnow.accesskey "N">

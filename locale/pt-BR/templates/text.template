@@ -1,0 +1,14 @@
+text/plain;Plain Text;[[Last updated: %lastupd%
+
+]][[User Agent: %useragent%
+
+]][[*** Extensions (enabled: %enabled_extensions_count%, disabled: %disabled_extensions_count%; total: %extensions_count%)
+{{extension:%name% %version% %disabled-text%
+}}
+]][[*** Themes (%themes_count%)
+{{theme:%name% %selected-text%
+}}
+]][[*** Plugins
+{{plugin:%name%
+}}
+]]

@@ -1,0 +1,15 @@
+<!ENTITY ftp.remotegroup.label "Remote File settings">
+<!ENTITY ftp.user.label "User name:">
+<!ENTITY ftp.user.accesskey "U">
+<!ENTITY ftp.password.label "Password:">
+<!ENTITY ftp.password.accesskey "P">
+<!ENTITY ftp.host.label "Host:">
+<!ENTITY ftp.host.accesskey "H">
+<!ENTITY ftp.path.label "Path:">
+<!ENTITY ftp.path.accesskey "a">
+
+<!ENTITY autoupload.label "Automatically upload on exit">
+<!ENTITY autoupload.accesskey "x">
+
+<!ENTITY uploadnow.label "Upload now">
+<!ENTITY uploadnow.accesskey "n">

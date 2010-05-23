@@ -1,0 +1,15 @@
+<!ENTITY ftp.remotegroup.label "Impostazioni dei file remoti">
+<!ENTITY ftp.user.label "Nome utente:">
+<!ENTITY ftp.user.accesskey "u">
+<!ENTITY ftp.password.label "Password:">
+<!ENTITY ftp.password.accesskey "P">
+<!ENTITY ftp.host.label "Server:">
+<!ENTITY ftp.host.accesskey "e">
+<!ENTITY ftp.path.label "Percorso:">
+<!ENTITY ftp.path.accesskey "r">
+
+<!ENTITY autoupload.label "Caricamento automatico all'uscita">
+<!ENTITY autoupload.accesskey "i">
+
+<!ENTITY uploadnow.label "Carica adesso">
+<!ENTITY uploadnow.accesskey "d">

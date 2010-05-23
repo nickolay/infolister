@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+   - Part of InfoLister by Nickolay Ponomarev <asqueella@gmail.com>
+   - Copyright (c) 2004-2005 Nickolay Ponomarev.
+   - See the license.txt included in this package for more information.
+   -->
+
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+
+<!DOCTYPE prefwindow SYSTEM "chrome://infolister/locale/prefs/prefs.dtd">
+
+<prefwindow xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="infolister-prefs" windowtype="infolister:prefwindow" title="&title;"
+        persist="screenX screenY" onload="onLoad(event);"
+        style="&prefwindow.style;" fixedheight="&prefwindow.fixedheight;"
+        >
+
+  <prefpane id="paneGeneral" label="&general_tab;"
+            src="chrome://infolister/content/prefs/general.xul"/>
+
+  <prefpane id="panePattern" label="&pattern_tab;" 
+            src="chrome://infolister/content/prefs/pattern.xul"/>
+
+  <prefpane id="paneUpload" label="&upload_tab;" notintb="true" 
+            src="chrome://infolister/content/prefs/upload.xul"/>
+
+  <stringbundle id="strbundle" src="chrome://infolister/locale/prefs/prefs.properties"/>
+
+  <script src="../common.js"/>
+  <script src="prefs.js"/>
+  <script src="../thunderbird.js"/>
+
+</prefwindow>

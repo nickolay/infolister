@@ -1,0 +1,8 @@
+<!ENTITY title "InfoLister 選項">
+<!ENTITY prefwindow.style "width: 40em;">
+<!ENTITY prefwindow.fixedheight "28em">
+<!ENTITY apply "套用">
+<!ENTITY apply.accesskey "A">
+<!ENTITY general_tab "一般設定">
+<!ENTITY pattern_tab "自訂輸出格式">
+<!ENTITY upload_tab "上傳設定">

@@ -1,0 +1,34 @@
+content	infolister	content/
+
+# Firefox
+overlay	chrome://browser/content/browser.xul	chrome://infolister/content/overlay.xul
+
+# Thunderbird
+overlay	chrome://messenger/content/mailWindowOverlay.xul	chrome://infolister/content/tb-overlay.xul
+overlay	chrome://messenger/content/messengercompose/messengercompose.xul	chrome://infolister/content/overlay-compose.xul
+
+# Sunbird
+overlay	chrome://calendar/content/calendar.xul	chrome://infolister/content/sb-overlay.xul
+
+# SeaMonkey
+overlay	chrome://navigator/content/navigator.xul	chrome://infolister/content/sm-overlay.xul
+
+
+skin	infolister	classic/1.0	skin/
+style	chrome://global/content/customizeToolbar.xul	chrome://infolister/skin/toolbar-button.css
+
+
+locale	infolister	en-US	locale/en-US/
+locale	infolister	de-DE	locale/de-DE/
+locale	infolister	es-ES	locale/es-ES/
+locale	infolister	fr-FR	locale/fr-FR/
+#locale	infolister	hu-HU	locale/hu-HU/
+locale	infolister	it-IT	locale/it-IT/
+locale	infolister	ja-JP	locale/ja-JP/
+locale	infolister	nl-NL	locale/nl-NL/
+locale	infolister	pl-PL	locale/pl-PL/
+locale	infolister	pt-BR	locale/pt-BR/
+locale	infolister	ru-RU	locale/ru-RU/
+locale	infolister	sk-SK	locale/sk-SK/
+locale	infolister	zh-CN	locale/zh-CN/
+locale	infolister	zh-TW	locale/zh-TW/

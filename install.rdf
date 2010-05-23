@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:em="http://www.mozilla.org/2004/em-rdf#"
+         xmlns:NC="http://home.netscape.com/NC-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Description RDF:about="rdf:#$nh0Dn"
+                   em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                   em:minVersion="3.0"
+                   em:maxVersion="3.6.*" />
+  <RDF:Description RDF:about="rdf:#$sh0Dn"
+                   em:id="{3550f703-e582-4d05-9a08-453d09bdfdc6}"
+                   em:minVersion="3.0"
+                   em:maxVersion="3.0.*" />
+  <RDF:Description RDF:about="urn:mozilla:install-manifest"
+                   em:id="{3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8}"
+                   em:name="InfoLister"
+                   em:version="0.10.3"
+                   em:description="Lists installed extensions and themes"
+                   em:creator="Nickolay Ponomarev"
+                   em:optionsURL="chrome://infolister/content/prefs/prefs.xul"
+                   em:iconURL="chrome://infolister/skin/icon32x32.png"
+                   em:homepageURL="http://mozilla.doslash.org/infolister"
+                   em:type="2">
+<!--                   em:updateURL="http://mozilla.doslash.org/infolister/update.rdf"-->
+    <em:targetApplication RDF:resource="rdf:#$nh0Dn"/>
+    <em:targetApplication RDF:resource="rdf:#$sh0Dn"/>
+    <!-- chronological order, translators after contributors -->
+    <em:contributor>Torisugari</em:contributor>
+    <em:contributor>Ralf Hasse (icons)</em:contributor>
+    <em:contributor>Rowne Mastaile</em:contributor>
+    <em:contributor>Robert Strong</em:contributor>
+    <em:contributor>zeniko</em:contributor>
+    <em:contributor>Dr. Evil</em:contributor>
+    <em:contributor>Robert Brand (Sunbird support)</em:contributor>
+    <em:contributor>Philip Chee (SeaMonkey support)</em:contributor>
+    <em:translator>Alf (Dutch)</em:translator>
+    <em:translator>SlovakSoft (Slovak)</em:translator>
+    <em:translator>Wronschien (French)</em:translator>
+    <em:translator>Unghost (Russian)</em:translator>
+    <em:translator>Leszek(teo)Życzkowski (Polish)</em:translator>
+    <em:translator>Haebaru (Japanese)</em:translator>
+
+    <!-- Sunbird -->
+    <em:targetApplication>
+      <Description>
+        <em:id>{718e30fb-e89b-41dd-9da7-e25a45638b28}</em:id>
+        <em:minVersion>0.9</em:minVersion>
+        <em:maxVersion>0.9</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+
+
+	<!-- SeaMonkey -->
+	<em:targetApplication>
+	<Description>
+		<em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id>
+		<em:minVersion>1.5a</em:minVersion>
+		<em:maxVersion>2.0a1</em:maxVersion>
+	</Description>
+	</em:targetApplication>
+  </RDF:Description>
+</RDF:RDF>

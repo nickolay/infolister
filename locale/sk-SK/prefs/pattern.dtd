@@ -1,0 +1,25 @@
+<!ENTITY XML.choose "Vyberte, ktoré informácie zahrnúť:">
+<!ENTITY lastupd.label "Posledná aktualizácia">
+<!ENTITY lastupd.accesskey "a">
+<!ENTITY ua.label "Identifikácia">
+<!ENTITY ua.accesskey "I">
+<!ENTITY plugin.label "Zoznam zásuvných modulov">
+<!ENTITY plugin.accesskey "d">
+<!ENTITY extension.label "Zoznam rozšírení">
+<!ENTITY extension.accesskey "r">
+<!ENTITY theme.label "Zoznam tém">
+<!ENTITY theme.accesskey "t">
+<!ENTITY formatting.choose "Nastaviť výstupný formát:">
+<!ENTITY format.label "Formát ako:">
+<!ENTITY format.accesskey "F">
+<!ENTITY template.label "Súbor šablóny:">
+<!ENTITY stylesheet.label "Predloha:">
+<!ENTITY stylesheet.accesskey "P:">
+<!ENTITY reloadXPILinks.label "Znovu načítať odkazy na XPI">
+<!ENTITY reloadXPILinks.accesskey "Z">
+<!ENTITY browse.label "Prehľadávať...">
+<!ENTITY browse.accesskey "h">
+<!ENTITY XSLT.caption "Predloha XSLT: ">
+<!ENTITY XSLT.dontuse "Nepoužívať XSLT">
+<!ENTITY XSLT.addPI "Pridať do výstupného XML pokyn na spracovanie">
+<!ENTITY XSLT.autoapply "Automaticky použiť transformáciu">

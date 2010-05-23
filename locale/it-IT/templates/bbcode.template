@@ -1,0 +1,20 @@
+text/plain;Codice BB;Informazioni su %app% 
+[[
+Ultimo aggiornamento: %lastupd%]][[
+User Agent: %useragent%]]
+
+[[[b]Estensioni[/b] (attive: %enabled_extensions_count%, disattivate: %disabled_extensions_count%; totali: %extensions_count%)
+[list]
+{{extension:[*]%name% %version% %disabled-text%
+}}[/list]
+]][[
+[b]Temi[/b] (%themes_count%)
+[list]
+{{theme:[*]%name% %selected-text%
+}}[/list]
+]][[
+[b]Plugin[/b]
+[list]
+{{plugin:[*]%name%
+}}[/list]
+]]

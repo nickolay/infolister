@@ -1,0 +1,20 @@
+text/plain;BBCode;Информация о моем %app%
+[[
+Дата последнего обновления: %lastupd%]][[
+User Agent: %useragent%]]
+
+[[[b]Расширения[/b] (включено: %enabled_extensions_count%, отключено: %disabled_extensions_count%; всего: %extensions_count%)
+[list]
+{{extension:[*][url=%homepageURL%]%name%[/url] %version% %disabled-text%
+}}[/list]
+]][[
+[b]Темы[/b] (%themes_count%)
+[list]
+{{theme:[*]%name% %selected-text%
+}}[/list]
+]][[
+[b]Плагины[/b]
+[list]
+{{plugin:[*]%name%
+}}[/list]
+]]

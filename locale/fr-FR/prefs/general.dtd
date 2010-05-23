@@ -1,0 +1,14 @@
+<!ENTITY autosave.label "Sauvegarder automatiquement dans un fichier au démarrage:">
+<!ENTITY autosave.accesskey "S">
+<!ENTITY clear.label "Vider">
+<!ENTITY clear.accesskey "V">
+
+<!ENTITY browse.label "Parcourir...">
+<!ENTITY browse.accesskey "P">
+
+<!ENTITY menuitem.label "Afficher dans le menu Outils">
+<!ENTITY menuitem.accesskey "A">
+
+<!ENTITY showinfo.label "Afficher les informations">
+<!ENTITY showinfo.accesskey "I">
+<!ENTITY showinfo.description "Vous pouvez aussi accéder à la fenêtre principale de Infolister par un bouton de la barre d'outils, disponible dans le menu &quot;Affichage > Barres d'outils > Personnaliser...&quot;.">

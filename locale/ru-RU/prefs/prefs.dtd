@@ -1,0 +1,8 @@
+<!ENTITY title "Настройки InfoLister">
+<!ENTITY prefwindow.style "width: 40em;">
+<!ENTITY prefwindow.fixedheight "28em">
+<!ENTITY apply "Применить">
+<!ENTITY apply.accesskey "п">
+<!ENTITY general_tab "Общие">
+<!ENTITY pattern_tab "Настройка вывода">
+<!ENTITY upload_tab "Загрузить на сервер">

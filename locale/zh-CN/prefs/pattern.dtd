@@ -1,0 +1,25 @@
+<!ENTITY XML.choose "选择要列出的项目：">
+<!ENTITY lastupd.label "上次更新时间">
+<!ENTITY lastupd.accesskey "L">
+<!ENTITY ua.label "用户标识">
+<!ENTITY ua.accesskey "U">
+<!ENTITY plugin.label "插件列表">
+<!ENTITY plugin.accesskey "P">
+<!ENTITY extension.label "扩展列表">
+<!ENTITY extension.accesskey "E">
+<!ENTITY theme.label "主题列表">
+<!ENTITY theme.accesskey "T">
+<!ENTITY formatting.choose "设置输出文件的格式:">
+<!ENTITY format.label "格式：">
+<!ENTITY format.accesskey "F">
+<!ENTITY template.label "模板文件:">
+<!ENTITY stylesheet.label "样式表：">
+<!ENTITY stylesheet.accesskey "S">
+<!ENTITY reloadXPILinks.label "重新载入扩展和主题的主页链接">
+<!ENTITY reloadXPILinks.accesskey "X">
+<!ENTITY browse.label "浏览...">
+<!ENTITY browse.accesskey "B">
+<!ENTITY XSLT.caption "XSLT 样式表">
+<!ENTITY XSLT.dontuse "不使用 XSLT">
+<!ENTITY XSLT.addPI "在输出的XML文件中添加进度介绍">
+<!ENTITY XSLT.autoapply "启用自动转换">

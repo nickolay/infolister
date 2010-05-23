@@ -1,0 +1,7 @@
+<!ENTITY brandname.label "InfoLister">
+<!ENTITY brandname.accesskey "f">
+<!ENTITY toolbarbutton.tooltip "Mostra informazioni sul programma">
+
+<!ENTITY openinfo.label "Apri la finestra delle informazioni...">
+<!ENTITY openoptions.label "Opzioni di InfoLister...">
+<!ENTITY upload.label "Carica le informazioni">

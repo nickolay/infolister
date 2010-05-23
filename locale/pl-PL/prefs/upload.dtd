@@ -1,0 +1,13 @@
+<!ENTITY ftp.remotegroup.label "Ustawienia wysyłania">
+<!ENTITY ftp.user.label "Użytkownik:">
+<!ENTITY ftp.user.accesskey "U">
+<!ENTITY ftp.password.label "Hasło:">
+<!ENTITY ftp.password.accesskey "H">
+<!ENTITY ftp.host.label "Serwer:">
+<!ENTITY ftp.host.accesskey "S">
+<!ENTITY ftp.path.label "Ścieżka:">
+<!ENTITY ftp.path.accesskey "a">
+<!ENTITY autoupload.label "Automatycznie wyślij przy zamykaniu">
+<!ENTITY autoupload.accesskey "w">
+<!ENTITY uploadnow.label "Wyślij teraz">
+<!ENTITY uploadnow.accesskey "t">
