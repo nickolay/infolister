@@ -1,0 +1,25 @@
+{
+    "version": "0.10.4a", 
+    "license": "MPL/GPL/LGPL", 
+    "author": "Nickolay Ponomarev (asqueella@gmail.com)", 
+    "id": "jid0-4g7AasBscUrADY8rYIbIJ5BmrUY", 
+    "description": "Lists installed extensions and themes",
+
+    "X-comment": "chronological order, translators after contributors",
+    "contributors": [
+        "Torisugari",
+        "Ralf Hasse (icons)",
+        "Rowne Mastaile",
+        "Robert Strong",
+        ">zeniko",
+        "Dr. Evil",
+        "Robert Brand (Sunbird support)",
+        "Philip Chee (SeaMonkey support)",
+        "Alf (Dutch)",
+        "SlovakSoft (Slovak)",
+        "Wronschien (French)",
+        "Unghost (Russian)",
+        "Leszek(teo)Zyczkowski (Polish)",
+        "Haebaru (Japanese)"
+    ]
+}
