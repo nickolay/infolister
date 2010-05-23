@@ -16,10 +16,7 @@
         persist="screenX screenY width height sizemode"
         onload="InfoLister.onLoad(event);" onunload="InfoLister.onUnload(event);">
         
-<script src="common.js"/>
-<script src="components/format.js"/>
-<script src="components/collect.js"/>
-<script src="components/addonsProvider.js"/>
+<script src="common-shim.js"/>
 <script src="utils/observer.js"/>
 <script src="infolister.js"/>
 <script src="thunderbird.js"/>

@@ -29,20 +29,10 @@ function requires(aScript) {
     .loadSubScript("chrome://infolister/content/" + aScript);
 }
 
-
-/**
- * The string bundle - read from infolister.properties - that we can get 
- * localized strings from.
- */
-var _stringBundle = null;
-function getStringBundle() {
-  if(!_stringBundle) {
-    var ls = ILHelpers.getService("intl/nslocaleservice;1", "nsILocaleService");
-    var s = ILHelpers.getService("intl/stringbundle;1", "nsIStringBundleService");
-    var bundleURL = "chrome://infolister/locale/infolister-service.properties";
-    _stringBundle = s.createBundle(bundleURL, ls.getApplicationLocale());
-  }
-  return _stringBundle;
+function loadJetpackModule(module) {
+  // XXX hardcoded jetpack harness ID <https://bugzilla.mozilla.org/show_bug.cgi?id=567642>
+  return Components.classes["@mozilla.org/harness-service;1?id=6724fc1b-3ec4-40e2-8583-8061088b3185"].
+    getService().wrappedJSObject.loader.require(module);
 }
 
 /**
@@ -102,6 +92,7 @@ var xpiLinksCache = {};
 function InfoListerServiceImpl() {
   this.wrappedJSObject = this;
   this.prefObserver = prefObserver; // make prefObserver available to infolister.js (lazyness)
+  this.loadJetpackModule = loadJetpackModule;
   
   if ("@mozilla.org/login-manager;1" in Components.classes) {
     requires("loginmanager/utils.js");
@@ -122,8 +113,7 @@ InfoListerServiceImpl.prototype = {
   _formatter: null,
   get formatter() {
     if(!this._formatter) {
-      requires("components/format.js");
-      this._formatter = gFormatter;
+      this._formatter = loadJetpackModule("format").gFormatter;
     }
     return this._formatter;
   },
@@ -135,72 +125,45 @@ InfoListerServiceImpl.prototype = {
   /** Returns the XML tree with collected information */
   getDataAsXML: function() {
     requires("hash.js");
-    requires("components/collect.js");
-    requires("components/addonsProvider.js");
+    var collect = loadJetpackModule("collect");
+
     prefObserver.register();   // listen for pref changes
 
-    if(!doc) {
-      // xxx if we need to aggregate data, load the file now
-      var impl = Components.classesByID["{3a9cd622-264d-11d4-ba06-0060b0fc76dd}"]
-                           .createInstance(CI.nsIDOMDOMImplementation);
-      doc = impl.createDocument("", "infolister", null);
-      insertLinebreak(doc.documentElement);
+    var requiredElements = [];
+    var xmlprefs = ILPrefs.getSubBranch("XML.");
+    function appendElt(aNodeName, aPrefName) {
+      if(!xmlprefs.getBoolPref(aPrefName + "bool"))
+        return;
+      requiredElements.push(aNodeName);
     }
 
-    // we store app information in <info app="Whatever"/> element, a direct
-    // child of root <infolister/> element. This allows us combine info from
-    // different applications in a single XML file.
+    appendElt("lastupd", "lastupd");
+    appendElt("useragent", "ua");
+    appendElt("extensions", "extension");
+    appendElt("themes", "theme");
+    appendElt("plugins", "plugin");
 
-    if(infoElt && prefObserver.needRecollect) {
-      doc.documentElement.removeChild(infoElt.nextSibling); // remove the linebreak
-      doc.documentElement.removeChild(infoElt);
-      infoElt = null;
-    }
-
-    if(!infoElt) {
-      infoElt = doc.createElement("info");
-      infoElt.setAttribute("app", ILHelpers.appName);
-      doc.documentElement.appendChild(infoElt);
-      insertLinebreak(doc.documentElement);
-      insertLinebreak(infoElt);
-
-      var xmlprefs = ILPrefs.getSubBranch("XML.");
-      function appendElt(aNodeName, aPrefName) {
-        if(!xmlprefs.getBoolPref(aPrefName + "bool"))
-          return;
-        var elt = doc.createElement(aNodeName);
-        infoElt.appendChild(elt);
-        insertLinebreak(infoElt);
-      }
-      appendElt("lastupd", "lastupd");
-      appendElt("useragent", "ua");
-      appendElt("extensions", "extension");
-      appendElt("themes", "theme");
-      appendElt("plugins", "plugin");
-    }
-
-    this._data = collectData(infoElt);
+    [this._data, this._infoElt] = collect.collectData(prefObserver.needRecollect, requiredElements);
 
     // calculate the hash of the collected data, without "last updated" field
-    var lastupdElt = infoElt.getElementsByTagName("lastupd");
+    var lastupdElt = this._infoElt.getElementsByTagName("lastupd");
     if(lastupdElt.length > 0) {
       lastupdElt = lastupdElt[0];
       var nextElt = lastupdElt.nextSibling;
-      infoElt.removeChild(lastupdElt);
+      this._infoElt.removeChild(lastupdElt);
     } else
       lastupdElt = null;
 
-
     // xxx multiple <app> elts; store the hash value right in the XML?
     var data = (new InfoListerWindows.anyWindow.XMLSerializer)
-      .serializeToString(doc);
+      .serializeToString(this._data);
     var hash = new CryptoHash();
     hash.update2(data);
     gHashValues.data = hash.finish();
     //LOG(gHashValues.data);
 
     if(lastupdElt)
-      infoElt.insertBefore(lastupdElt, nextElt);
+      this._infoElt.insertBefore(lastupdElt, nextElt);
 
     prefObserver.needRecollect = false;
     prefObserver.needReformat = true;
@@ -263,14 +226,12 @@ InfoListerServiceImpl.prototype = {
   },
 
   getXPILinks: function(aCallback) {
-    requires("components/collect.js");
-    requires("components/addonsProvider.js");
     requires("components/xpiLinks.js");
 
     if(!this._data)
       this.getDataAsXML();
-    var exts = infoElt.getElementsByTagName("ext");
-    var themes = infoElt.getElementsByTagName("theme");
+    var exts = this._infoElt.getElementsByTagName("ext");
+    var themes = this._infoElt.getElementsByTagName("theme");
     var addons = [];
     for(var i=0; i<exts.length; i++) addons.push(exts.item(i));
     for(var i=0; i<themes.length; i++) addons.push(themes.item(i));
@@ -307,7 +268,7 @@ InfoListerServiceImpl.prototype = {
       this.getDataAsXML();
 
     var hash = new CryptoHash();
-    var result = this.formatter.formatInfo(hash, aNeedXPILinks);
+    var result = this.formatter.formatInfo(this._infoElt, xpiLinksCache, hash, aNeedXPILinks);
     gHashValues.format = hash.finish();
     //LOG(gHashValues.format);
 
@@ -328,7 +289,7 @@ InfoListerServiceImpl.prototype = {
       if(aFlag == SILENT_FLAG)
         return;
 
-      var sb = getStringBundle();
+      var sb = ILHelpers.stringBundle;
       var titleText = sb.GetStringFromName("infolister");
       var msgText = sb.GetStringFromName("setup_now_msg1");
       var setupNowText = sb.GetStringFromName("setup_now_btn");
@@ -668,18 +629,28 @@ InfoListerChannel.prototype = {
     var channel = this;
     var ILService = getInfoListerService();
     //LOG("channel - asyncOpen");
-    ILService.getFormattedDataWithCallback(
-      function onDataAvailable(aData) {
-        channel.contentType = ILService.formatter.contentType;
-        aObserver.onStartRequest(channel, aContext);
-        //LOG("on data available callback: data length=" + aData.length + "; content type=" + channel.contentType);
-        var inputStream = createInputStreamFromString(aData, channel.contentCharset);
-        //LOG(inputStream.available());
-        aObserver.onDataAvailable(channel, aContext, inputStream, 0, inputStream.available());
-        aObserver.onStopRequest(channel, aContext, this.status);
-        //LOG("done");
-      }
-    );
+    try {
+      ILService.getFormattedDataWithCallback(
+        function onDataAvailable(aData) {
+          try {
+            channel.contentType = ILService.formatter.contentType;
+            aObserver.onStartRequest(channel, aContext);
+            //LOG("on data available callback: data length=" + aData.length + "; content type=" + channel.contentType);
+            var inputStream = createInputStreamFromString(aData, channel.contentCharset);
+            //LOG(inputStream.available());
+            aObserver.onDataAvailable(channel, aContext, inputStream, 0, inputStream.available());
+            aObserver.onStopRequest(channel, aContext, this.status);
+            //LOG("done");
+          } catch(e) {
+            dump("InfoLister ERROR: " + e + "\n")
+            Components.utils.reportError(e)
+          }
+        }
+      );
+    } catch(e) {
+      dump("InfoLister ERROR: " + e + "\n")
+      Components.utils.reportError(e)
+    }
   },
 
   // nsIRequest
@@ -745,7 +716,7 @@ function FactoryHolder(aObj) {
 
       // Load common helpers as soon as any object from this module is
       // instantiated -- most of our code relies on those.
-      requires("common.js");
+      requires("common-shim.js");
       return (new this.constructor).QueryInterface(aIID);
     }
   };

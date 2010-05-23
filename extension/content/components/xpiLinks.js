@@ -28,7 +28,7 @@
  *         \_        -> UpdateRDFSinkObserver.onError ->        _/
  */
 
-
+var gRDF;
 /** 
  * Host application ID and version.
  */
@@ -53,6 +53,7 @@ var gLinksCollector = {
   collect: function (addons, onProgress, onDone) {
     // XXX what happens if this gets called twice?
     LOG_xpiLinks("== Start collecting XPI links ==");
+    gRDF = ILHelpers.getService("rdf/rdf-service;1", "nsIRDFService");
 
     // xpiLinksCache is defined in the main component file and will hold the 
     // id -> xpilink hash after we're finished collecting.

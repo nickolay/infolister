@@ -26,7 +26,7 @@
 
   <stringbundle id="strbundle" src="chrome://infolister/locale/prefs/prefs.properties"/>
 
-  <script src="../common.js"/>
+  <script src="../common-shim.js"/>
   <script src="prefs.js"/>
   <script src="../thunderbird.js"/>
 
