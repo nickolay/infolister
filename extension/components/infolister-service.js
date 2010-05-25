@@ -31,7 +31,7 @@ function requires(aScript) {
 
 function loadJetpackModule(module) {
   // XXX hardcoded jetpack harness ID <https://bugzilla.mozilla.org/show_bug.cgi?id=567642>
-  return Components.classes["@mozilla.org/harness-service;1?id=6724fc1b-3ec4-40e2-8583-8061088b3185"].
+  return Components.classes["@mozilla.org/harness-service;1?id=jid0-4g7AasBscUrADY8rYIbIJ5BmrUY"].
     getService().wrappedJSObject.loader.require(module);
 }
 
