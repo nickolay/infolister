@@ -1,5 +1,6 @@
 var InfoListerWindows = require("common").InfoListerWindows;
 var ILPrefs = require("common").ILPrefs;
+const {Cc, Ci} = require("chrome");
 
 exports.testAboutInfo = function(test) {
   //test.pass();

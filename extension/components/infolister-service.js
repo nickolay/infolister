@@ -30,8 +30,21 @@ function requires(aScript) {
 }
 
 function loadJetpackModule(module) {
+  // see bug 567642 comment 13...
+  if (!loadJetpackModule.contractID) {
+    var contractID = "@mozilla.org/harness-service;1?id=jid0-4g7AasBscUrADY8rYIbIJ5BmrUY";
+    var testContractID = "@mozilla.org/harness-service;1?id=6724fc1b-3ec4-40e2-8583-8061088b3185";
+    if (contractID in Components.classes) {
+      loadJetpackModule.contractID = contractID;
+    } else if (testContractID in Components.classes) {
+      dump("InfoLister: running in test mode!\n")
+      Components.reportError("InfoLister: running in test mode!\n");
+      loadJetpackModule.contractID = testContractID;
+    }
+  }
+
   try {
-    return Components.classes["@mozilla.org/harness-service;1?id=jid0-4g7AasBscUrADY8rYIbIJ5BmrUY"].
+    return Components.classes[loadJetpackModule.contractID].
       getService().wrappedJSObject.loader.require(module);
   } catch(e) {
     dump("InfoLister error while loading module '" + module + "': " + e + "\n");
