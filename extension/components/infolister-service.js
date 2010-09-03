@@ -30,8 +30,13 @@ function requires(aScript) {
 }
 
 function loadJetpackModule(module) {
-  return Components.classes["@mozilla.org/harness-service;1?id=jid0-4g7AasBscUrADY8rYIbIJ5BmrUY"].
-    getService().wrappedJSObject.loader.require(module);
+  try {
+    return Components.classes["@mozilla.org/harness-service;1?id=jid0-4g7AasBscUrADY8rYIbIJ5BmrUY"].
+      getService().wrappedJSObject.loader.require(module);
+  } catch(e) {
+    dump("InfoLister error while loading module '" + module + "': " + e + "\n");
+    Components.reportError(e);
+  }
 }
 
 /**
