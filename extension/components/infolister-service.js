@@ -37,8 +37,7 @@ function loadJetpackModule(module) {
     if (contractID in Components.classes) {
       loadJetpackModule.contractID = contractID;
     } else if (testContractID in Components.classes) {
-      dump("InfoLister: running in test mode!\n")
-      Components.reportError("InfoLister: running in test mode!\n");
+      LOG_ERROR("InfoLister: running in test mode!");
       loadJetpackModule.contractID = testContractID;
     }
   }
@@ -107,17 +106,21 @@ var xpiLinksCache = {};
  * to do the real job.
  */
 function InfoListerServiceImpl() {
-  this.wrappedJSObject = this;
-  this.prefObserver = prefObserver; // make prefObserver available to infolister.js (lazyness)
-  this.loadJetpackModule = loadJetpackModule;
-  
-  if ("@mozilla.org/login-manager;1" in Components.classes) {
-    requires("loginmanager/utils.js");
-    if (!ILPrefs.getBoolPrefDef("migrated_to_login_manager", false)) {
-      requires("loginmanager/migrate.js");
-      ILMigrateToLoginManager();
-      ILPrefs.setBoolPref("migrated_to_login_manager", true);
+  try {
+    this.wrappedJSObject = this;
+    this.prefObserver = prefObserver; // make prefObserver available to infolister.js (lazyness)
+    this.loadJetpackModule = loadJetpackModule;
+    
+    if ("@mozilla.org/login-manager;1" in Components.classes) {
+      requires("loginmanager/utils.js");
+      if (!ILPrefs.getBoolPrefDef("migrated_to_login_manager", false)) {
+        requires("loginmanager/migrate.js");
+        ILMigrateToLoginManager();
+        ILPrefs.setBoolPref("migrated_to_login_manager", true);
+      }
     }
+  } catch (e) {
+    LOG_ERROR(e);
   }
 }
 InfoListerServiceImpl.prototype = {
@@ -643,10 +646,10 @@ InfoListerChannel.prototype = {
   
   asyncOpen: function (aObserver, aContext)
   {
-    var channel = this;
-    var ILService = getInfoListerService();
-    //LOG("channel - asyncOpen");
     try {
+      var channel = this;
+      var ILService = getInfoListerService();
+      //LOG("channel - asyncOpen");
       ILService.getFormattedDataWithCallback(
         function onDataAvailable(aData) {
           try {
@@ -659,14 +662,12 @@ InfoListerChannel.prototype = {
             aObserver.onStopRequest(channel, aContext, this.status);
             //LOG("done");
           } catch(e) {
-            dump("InfoLister ERROR: " + e + "\n")
-            Components.utils.reportError(e)
+            LOG_ERROR(e);
           }
         }
       );
     } catch(e) {
-      dump("InfoLister ERROR: " + e + "\n")
-      Components.utils.reportError(e)
+      LOG_ERROR(e);
     }
   },
 
@@ -709,6 +710,11 @@ function LOG(aMsg) {
     self.enabled = ILPrefs.getBoolPref("logging.enabled");
   if(self.enabled)
     ILHelpers.dump(aMsg);
+}
+
+function LOG_ERROR(e) {
+  dump("InfoLister error: " + e + "\n");
+  Components.utils.reportError(e);
 }
 
 // constructors for objects we want to XPCOMify
