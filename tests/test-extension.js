@@ -29,14 +29,15 @@ exports.testAboutInfo = function(test) {
     tabBrowser.selectedTab = newTab;
     var b = tabBrowser.getBrowserForTab(newTab);
 
-    if (checkDocumentCallback(b.contentDocument)) {
+    if (b.contentDocument.documentElement &&
+        checkDocumentCallback(b.contentDocument)) {
       test.assert(true, "Loaded non-empty about:info (without load callback; template=" +
                   template + ")");
       tabBrowser.removeTab(newTab);
       doneCallback();
     } else {
       function onPageLoad() {
-        b.removeEventListener("load", onPageLoad, true);
+        b.removeEventListener("DOMContentLoaded", onPageLoad, true);
 
         test.assert(checkDocumentCallback(b.contentDocument),
                     "Loaded non-empty about:info (in load callback; template=" + template + ")");
@@ -44,22 +45,7 @@ exports.testAboutInfo = function(test) {
         test.pass("");
         doneCallback();
       }
-      b.addEventListener("load", onPageLoad, true);
-      if (template == "xpilist.template") {
-        // XXX "load" event doesn't fire for the xpi template in Firefox 3.6...
-        (function repeatTesting() {
-          require("timer").setTimeout(function() {
-            if (checkDocumentCallback(b.contentDocument)) {
-              test.assert(true, "Loaded non-empty about:info (without load callback; template=" +
-                          template + ")");
-              tabBrowser.removeTab(newTab);
-              doneCallback();
-            } else {
-              repeatTesting();
-            }
-          }, 100)
-        })();
-      }
+      b.addEventListener("DOMContentLoaded", onPageLoad, true);
     }
   }
 
