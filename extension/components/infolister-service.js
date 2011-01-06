@@ -723,69 +723,24 @@ var objects = [InfoListerServiceImpl, UploadJob, AboutInfo];
 
 /*
  * Common registration code.
- *
  */
 
 const CI = Components.interfaces, CC = Components.classes, CR = Components.results;
 
-function FactoryHolder(aObj) {
-  this.CID        = aObj.prototype.classID;
-  this.contractID = aObj.prototype.contractID;
-  this.className  = aObj.prototype.classDescription;
-  this.factory = {
-    createInstance: function(aOuter, aIID) {
-      if(aOuter)
-        throw CR.NS_ERROR_NO_AGGREGATION;
-
-      // Load common helpers as soon as any object from this module is
-      // instantiated -- most of our code relies on those.
-      requires("common-shim.js");
-      return (new this.constructor).QueryInterface(aIID);
-    }
-  };
-  this.factory.constructor = aObj;
+Components.utils.import("resource://gre/modules/XPCOMUtils.jsm");
+if ("generateNSGetFactory" in XPCOMUtils) { // Gecko 2
+  const NSGetFactory = XPCOMUtils.generateNSGetFactory(objects);
 }
 
-var gModule = {
-  registerSelf: function (aComponentManager, aFileSpec, aLocation, aType)
-  {
-    aComponentManager.QueryInterface(CI.nsIComponentRegistrar);
-    for (var key in this._objects) {
-      var obj = this._objects[key];
-      aComponentManager.registerFactoryLocation(obj.CID, obj.className,
-        obj.contractID, aFileSpec, aLocation, aType);
-    }
-  },
+function NSGetModule(compMgr, fileSpec) { // Gecko 1.9.2
+  return XPCOMUtils.generateModule(objects);
+}
 
-  unregisterSelf: function(aCompMgr, aFileSpec, aLocation) {
-    aComponentManager.QueryInterface(CI.nsIComponentRegistrar);
-    for (var key in this._objects) {
-      var obj = this._objects[key];
-      aComponentManager.unregisterFactoryLocation(obj.CID, aFileSpec);
-    }
-  },
-
-  getClassObject: function(aComponentManager, aCID, aIID) {
-    if (!aIID.equals(CI.nsIFactory)) throw CR.NS_ERROR_NOT_IMPLEMENTED;
-
-    for (var key in this._objects) {
-      if (aCID.equals(this._objects[key].CID))
-        return this._objects[key].factory;
-    }
-
-    throw CR.NS_ERROR_NO_INTERFACE;
-  },
-
-  canUnload: function(aComponentManager) {
-    return true;
-  },
-
-  _objects: {} //FactoryHolder
-};
-
-function NSGetModule(compMgr, fileSpec) 
-{
-  for(var i in objects)
-    gModule._objects[i] = new FactoryHolder(objects[i]);
-  return gModule;
+XPCOMUtils.defineLazyGetter(this, "commonModule", function() loadJetpackModule("common"));
+XPCOMUtils.defineLazyGetter(this, "InfoListerWindows", function() commonModule.InfoListerWindows);
+XPCOMUtils.defineLazyGetter(this, "ILHelpers", function() commonModule.ILHelpers);
+XPCOMUtils.defineLazyGetter(this, "ILPrefs", function() commonModule.ILPrefs);
+function getInfoListerService() {
+  return Components.classes["@mozilla.doslash.org/infolister/service;1"].
+    getService(Components.interfaces.nsISupports).wrappedJSObject;
 }
