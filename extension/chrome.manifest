@@ -1,3 +1,18 @@
+# FIXME hardcoded CID
+# See gecko2-readme in the root
+component {6724fc1b-3ec4-40e2-8583-8061088b3185} components/harness.js
+category profile-after-change InfoListerHarnessReal @mozilla.org/harness-service;1?id=jid0-4g7AasBscUrADY8rYIbIJ5BmrUY
+category profile-after-change InfoListerHarnessTest @mozilla.org/harness-service;1?id=6724fc1b-3ec4-40e2-8583-8061088b3185
+contract @mozilla.org/harness-service;1?id=jid0-4g7AasBscUrADY8rYIbIJ5BmrUY {6724fc1b-3ec4-40e2-8583-8061088b3185}
+contract @mozilla.org/harness-service;1?id=6724fc1b-3ec4-40e2-8583-8061088b3185 {6724fc1b-3ec4-40e2-8583-8061088b3185}
+
+component {55b75ad5-a4dd-445e-91a0-4ef9a6c24cfe} components/infolister-service.js
+contract @mozilla.doslash.org/infolister/service;1 {55b75ad5-a4dd-445e-91a0-4ef9a6c24cfe}
+
+component {2ee2ad53-be3a-2b41-7a75-12533ba32165} components/infolister-service.js
+contract @mozilla.org/network/protocol/about;1?what=info {2ee2ad53-be3a-2b41-7a75-12533ba32165}
+
+
 content	infolister	content/
 
 # Firefox

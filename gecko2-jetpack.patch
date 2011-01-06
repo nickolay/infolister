@@ -1,0 +1,111 @@
+diff --git a/python-lib/cuddlefish/__init__.py b/python-lib/cuddlefish/__init__.py
+--- a/python-lib/cuddlefish/__init__.py
++++ b/python-lib/cuddlefish/__init__.py
+@@ -527,18 +527,20 @@ def run(arguments=sys.argv[1:], target_c
+                 sys.exit(1)
+         # if we make it this far, we have a JID
+         jid = target_cfg["id"]
+         assert not jid.endswith("@jetpack")
+         unique_prefix = '%s-' % jid # used for resource: URLs
+ 
+         # the harness_guid is used for an XPCOM class ID. We use the
+         # JetpackID for the add-on ID and the XPCOM contract ID.
+-        import uuid
+-        harness_guid = str(uuid.uuid4())
++        # XXXnickolay this makes it impossible to register the harness component in chrome.manifest statically
++        #import uuid
++        #harness_guid = str(uuid.uuid4())
++        harness_guid = '6724fc1b-3ec4-40e2-8583-8061088b3185'
+ 
+     else:
+         if options.use_server:
+             harness_guid = '2974c5b5-b671-46f8-a4bb-63c6eca6261b'
+         else:
+             harness_guid = '6724fc1b-3ec4-40e2-8583-8061088b3185'
+         unique_prefix = '%s-' % target
+         jid = harness_guid
+diff --git a/python-lib/cuddlefish/app-extension/components/harness.js b/python-lib/cuddlefish/app-extension/components/harness.js
+--- a/python-lib/cuddlefish/app-extension/components/harness.js
++++ b/python-lib/cuddlefish/app-extension/components/harness.js
+@@ -359,17 +359,20 @@ function buildHarnessService(rootFileSpe
+ 
+       for (name in options.resources)
+         resProt.setSubstitution(name, null);
+     },
+ 
+     observe: function Harness_observe(subject, topic, data) {
+       try {
+         switch (topic) {
+-        case "app-startup":
++        case "profile-after-change":
++          if (this.handledStartupNotification) break;
++         case "app-startup":
++          this.handledStartupNotification = true;
+           var appInfo = Cc["@mozilla.org/xre/app-info;1"]
+                         .getService(Ci.nsIXULAppInfo);
+           switch (appInfo.ID) {
+           case THUNDERBIRD_ID:
+           case FENNEC_ID:
+             obSvc.addObserver(this, "xul-window-visible", true);
+             break;
+           case FIREFOX_ID:
+@@ -562,16 +565,40 @@ function getDefaults(rootFileSpec) {
+   function logError(e) {
+     defaultLogError(e, print);
+   }
+ 
+   return {options: options, onQuit: onQuit, dump: print,
+           logError: logError};
+ }
+ 
++
++function NSGetFactory(contractID) {
++  try{
++  if (!NSGetFactory.fn) {
++    var rootFileSpec = __LOCATION__.parent.parent;
++    var defaults = getDefaults(rootFileSpec);
++    var HarnessService = buildHarnessService(rootFileSpec,
++                                             defaults.dump,
++                                             defaults.logError,
++                                             defaults.onQuit,
++                                             defaults.options);
++    NSGetFactory.fn = XPCOMUtils.generateNSGetFactory([HarnessService]);
++  }
++  }catch(e) {
++    Components.reportError(e)
++  }
++  try {
++    return NSGetFactory.fn(contractID);
++  } catch(e) {
++    Components.utils.reportError(e)
++    dump(e)
++  }
++}
++
+ // Everything below is only used on Gecko 1.9.2 or below.
+ 
+ function NSGetModule(compMgr, fileSpec) {
+   var rootFileSpec = fileSpec.parent.parent;
+   var defaults = getDefaults(rootFileSpec);
+   var HarnessService = buildHarnessService(rootFileSpec,
+                                            defaults.dump,
+                                            defaults.logError,
+@@ -608,17 +635,17 @@ var lifeCycleObserver192 = {
+     }
+     return undefined;
+   },
+ 
+   // This must be called first to initialize the singleton.  It must be called
+   // before profile-after-change.
+   init: function lifeCycleObserver192_init(bundleID, logError) {
+     // This component is present in 1.9.2 but not 1.9.3.
+-    if ("@mozilla.org/extensions/manager;1" in Cc && !this._inited) {
++    if (/*"@mozilla.org/extensions/manager;1" in Cc && */!this._inited) {
+       // Need an event that's sent before the HarnessService is loaded but after
+       // the preferences service is available.  profile-after-change works.
+       obSvc.addObserver(this, "profile-after-change", true);
+       obSvc.addObserver(this, "em-action-requested", true);
+       this._bundleID = bundleID;
+       this._logError = logError;
+       this._inited = true;
+     }
