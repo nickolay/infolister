@@ -125,7 +125,8 @@ exports.testInfoListerWindow = function(test) {
     var infoFrame = win.document.getElementById("infoFrame");
     
     (function poll() {
-      if (infoFrame.contentDocument.documentElement.innerHTML.indexOf("InfoLister")>0) {
+      if (infoFrame.contentDocument.documentElement &&
+          infoFrame.contentDocument.documentElement.innerHTML.indexOf("InfoLister")>0) {
         test.pass("Non-empty content in InfoLister window");
         test.done();
       } else {

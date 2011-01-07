@@ -143,7 +143,7 @@ InfoListerServiceImpl.prototype = {
   },
 
   /** Returns the XML tree with collected information */
-  getDataAsXML: function() {
+  getDataAsXML: function(haveXMLDataCallback) {
     requires("hash.js");
     var collect = loadJetpackModule("collect");
 
@@ -163,31 +163,34 @@ InfoListerServiceImpl.prototype = {
     appendElt("themes", "theme");
     appendElt("plugins", "plugin");
 
-    [this._data, this._infoElt] = collect.collectData(prefObserver.needRecollect, requiredElements);
-
-    // calculate the hash of the collected data, without "last updated" field
-    var lastupdElt = this._infoElt.getElementsByTagName("lastupd");
-    if(lastupdElt.length > 0) {
-      lastupdElt = lastupdElt[0];
-      var nextElt = lastupdElt.nextSibling;
-      this._infoElt.removeChild(lastupdElt);
-    } else
-      lastupdElt = null;
-
-    // xxx multiple <app> elts; store the hash value right in the XML?
-    var data = (new InfoListerWindows.anyWindow.XMLSerializer)
-      .serializeToString(this._data);
-    var hash = new CryptoHash();
-    hash.update2(data);
-    gHashValues.data = hash.finish();
-    //LOG(gHashValues.data);
-
-    if(lastupdElt)
-      this._infoElt.insertBefore(lastupdElt, nextElt);
-
-    prefObserver.needRecollect = false;
-    prefObserver.needReformat = true;
-    return this._data;
+    var self = this;
+    collect.collectData(prefObserver.needRecollect, requiredElements,
+      function haveData(rv) {
+        [self._data, self._infoElt] = rv;
+        // calculate the hash of the collected data, without "last updated" field
+        var lastupdElt = self._infoElt.getElementsByTagName("lastupd");
+        if(lastupdElt.length > 0) {
+          lastupdElt = lastupdElt[0];
+          var nextElt = lastupdElt.nextSibling;
+          self._infoElt.removeChild(lastupdElt);
+        } else
+          lastupdElt = null;
+    
+        // xxx multiple <app> elts; store the hash value right in the XML?
+        var data = (new InfoListerWindows.anyWindow.XMLSerializer)
+          .serializeToString(self._data);
+        var hash = new CryptoHash();
+        hash.update2(data);
+        gHashValues.data = hash.finish();
+        //LOG(gHashValues.data);
+    
+        if(lastupdElt)
+          self._infoElt.insertBefore(lastupdElt, nextElt);
+    
+        prefObserver.needRecollect = false;
+        prefObserver.needReformat = true;
+        haveXMLDataCallback();
+      });
   },
 
   /* 
@@ -211,70 +214,77 @@ InfoListerServiceImpl.prototype = {
   _callbacks: [],
   _invokationNum: 0,
   getFormattedDataWithCallback: function(aCallback) {
-    var needXPILinks = { value: false };
-    var output = this.getFormattedData(needXPILinks);
-
     var self = this; // make us available to the closure
-    if(needXPILinks.value &&
-      // don't run this twice per session, unless forced (by a caller in the Options dialog)
-      // XXX also if last collection was cancelled
-       (!("components/xpiLinks.js" in loadedScripts)))
-    {
-      this._invokationNum ++;
-      this._callbacks.push(aCallback);
-      this.getXPILinks(
-        function() {
-          self._invokationNum --;
-          LOG("callback in getFormattedDataWithCallback: callbacks.length=" + 
-            self._callbacks.length + "; aCallback=" + aCallback.toString().substring(0,30) 
-            + "..." + "\r\ninvokationNum=" + self._invokationNum);
-          if(self._invokationNum > 0)
-            return;
-          for(var i in self._callbacks) {
-            LOG("callback invoked asynchronously: " + self._callbacks[i].toString().substring(0,30) + "...");
-            self._callbacks[i](getInfoListerService().getFormattedData(null, true));
-          }
-          self._callbacks.length = 0;
-          //var os = ILHelpers.getService("observer-service;1", "nsIObserverService");
-          //os.notifyObservers(null, "infolister-prefchanged", null);
+    this.getFormattedData(
+      function haveFormattedData(output, needXPILinks) {
+        if(needXPILinks.value &&
+          // don't run this twice per session, unless forced (by a caller in the Options dialog)
+          // XXX also if last collection was cancelled
+           (!("components/xpiLinks.js" in loadedScripts)))
+        {
+          self._invokationNum ++;
+          self._callbacks.push(aCallback);
+          self.getXPILinks(
+            function() {
+              self._invokationNum --;
+              LOG("callback in getFormattedDataWithCallback: callbacks.length=" + 
+                self._callbacks.length + "; aCallback=" + aCallback.toString().substring(0,30) 
+                + "..." + "\r\ninvokationNum=" + self._invokationNum);
+              if(self._invokationNum > 0)
+                return;
+              getInfoListerService().getFormattedData(
+                function haveFormattedDataWithXPILinks(output) {
+                  for(var i in self._callbacks) {
+                    LOG("callback invoked asynchronously: " + self._callbacks[i].toString().substring(0,30) + "...");
+                    self._callbacks[i](output);
+                  }
+                  self._callbacks.length = 0;
+                }, true); // FIXME
+            }
+          );
+        } else {
+          LOG("callback invoked synchronously: " + aCallback.toString().substring(0,30) + "...");
+          aCallback(output);
         }
-      );
-    } else {
-      LOG("callback invoked synchronously: " + aCallback.toString().substring(0,30) + "...");
-      aCallback(output);
-    }
+      });
   },
 
   getXPILinks: function(aCallback) {
     requires("components/xpiLinks.js");
 
+    var self = this;
     if(!this._data)
-      this.getDataAsXML();
-    var exts = this._infoElt.getElementsByTagName("ext");
-    var themes = this._infoElt.getElementsByTagName("theme");
-    var addons = [];
-    for(var i=0; i<exts.length; i++) addons.push(exts.item(i));
-    for(var i=0; i<themes.length; i++) addons.push(themes.item(i));
-
-    try {
-      // xxx anyWindow
-      var progressDialog = InfoListerWindows.anyWindow.openDialog(
-        "chrome://infolister/content/progress.xul", "", 
-        "chrome, centerscreen", 
-        function(aProgressCallback) { 
-          gLinksCollector.collect(addons, aProgressCallback,
-            function() {
-              if(progressDialog && !progressDialog.closed)
-                progressDialog.close();
-              if(aCallback instanceof Function)
-                aCallback();
-            }
-          );
-        },
-        function() { gLinksCollector.cancel(); }
-      );
-    } catch(e) {
-      ILHelpers.dumpException(e);
+      this.getDataAsXML(haveXMLDataCallback);
+    else
+      haveXMLDataCallback();
+    
+    function haveXMLDataCallback() {
+      var exts = self._infoElt.getElementsByTagName("ext");
+      var themes = self._infoElt.getElementsByTagName("theme");
+      var addons = [];
+      for(var i=0; i<exts.length; i++) addons.push(exts.item(i));
+      for(var i=0; i<themes.length; i++) addons.push(themes.item(i));
+  
+      try {
+        // xxx anyWindow
+        var progressDialog = InfoListerWindows.anyWindow.openDialog(
+          "chrome://infolister/content/progress.xul", "", 
+          "chrome, centerscreen", 
+          function(aProgressCallback) { 
+            gLinksCollector.collect(addons, aProgressCallback,
+              function() {
+                if(progressDialog && !progressDialog.closed)
+                  progressDialog.close();
+                if(aCallback instanceof Function)
+                  aCallback();
+              }
+            );
+          },
+          function() { gLinksCollector.cancel(); }
+        );
+      } catch(e) {
+        ILHelpers.dumpException(e);
+      }
     }
   },
 
@@ -283,16 +293,17 @@ InfoListerServiceImpl.prototype = {
    * aNeedXPILinks.value to true, if the selected template needs XPI links 
    * information.
    */
-  getFormattedData: function(aNeedXPILinks, aUseCachedData) {
-    if(!aUseCachedData)
-      this.getDataAsXML();
-
-    var hash = new CryptoHash();
-    var result = this.formatter.formatInfo(this._infoElt, xpiLinksCache, hash, aNeedXPILinks);
-    gHashValues.format = hash.finish();
-    //LOG(gHashValues.format);
-
-    return result;
+  getFormattedData: function(haveFormattedDataCallback) { // FIXME
+    var needXPILinks = {value: false};
+    var self = this;
+    this.getDataAsXML(function haveXMLData() {
+      var hash = new CryptoHash();
+      var output = self.formatter.formatInfo(self._infoElt, xpiLinksCache, hash, needXPILinks);
+      gHashValues.format = hash.finish();
+      //LOG(gHashValues.format);
+  
+      haveFormattedDataCallback(output, needXPILinks);
+    });
   },
 
   /**
@@ -563,7 +574,7 @@ UploadJob.prototype = {
   // xxx It's a pity we can't just use the infolister channel here
   // xxx we don't want to generate output info twice on upload.
   get streamToUpload() {
-    var data = getInfoListerService().getFormattedData();
+    var data = getInfoListerService().getFormattedData(); // FIXME
     return createInputStreamFromString(data);
   },
 
