@@ -356,7 +356,7 @@ InfoListerServiceImpl.prototype = {
 
     function doUpload(aData) {
       try {
-        // xxx anyWindow
+        UploadJob._data = aData; // save the data to upload for the UploadJob.
         InfoListerWindows.anyWindow.openDialog(
           "chrome://infolister/content/upload.xul", "", "chrome", 
           "@mozilla.doslash.org/infolister/uploadjob;1", aFlag == SILENT_FLAG);
@@ -567,15 +567,16 @@ UploadJob.prototype = {
 
   /**
    * @returns {nsIInputStream} the stream to upload
-   * @note this method returns immediately (i.e. it doesn't wait for XPI 
-   * links to be collected). Therefore if you want the XPI links to work 
-   * fine, you need to collect them *before* calling this.
+   * @note this method can only return immediately because it uses the data
+   *       collected in InfoListerService.uploadInfo. It must be only called
+   *       a single time from chrome://infolister/content/upload.js, which
+   *       must only be called from InfoListerService.uploadInfo.
    */
-  // xxx It's a pity we can't just use the infolister channel here
-  // xxx we don't want to generate output info twice on upload.
   get streamToUpload() {
-    var data = getInfoListerService().getFormattedData(); // FIXME
-    return createInputStreamFromString(data);
+    if (!UploadJob._data) throw "Internal error: No data to upload.";
+    var stream = createInputStreamFromString(UploadJob._data);
+    delete UploadJob._data;
+    return stream;
   },
 
   get contentType() {

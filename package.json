@@ -7,6 +7,10 @@
     "id": "jid0-4g7AasBscUrADY8rYIbIJ5BmrUY", 
     "description": "Lists installed extensions and themes",
 
+    "X-comment": "FIXME: remove before packaging",
+    "X-comment": "Required for test-upload.js. Get it from https://github.com/nickolay/jetpack-httpd",
+    "dependencies": "httpd",
+
     "X-comment": "chronological order, translators after contributors",
     "contributors": [
         "Torisugari",
