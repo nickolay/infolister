@@ -27,7 +27,7 @@
       <menuitem id="infolister-tbctx-open" label="&openinfo.label;" default="true"
                 oncommand="InfoListerWindows.open(InfoListerWindows.Info);"/>
       <menuitem id="infolister-tbctx-options" label="&openoptions.label;"
-                oncommand="InfoListerWindows.open(InfoListerWindows.Prefs);"/>
+                oncommand="InfoListerWindows.openPreferences();"/>
     </popup>
   </window>
 

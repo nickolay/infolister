@@ -73,7 +73,7 @@ var InfoLister = {
   // case we cannot focus the Options window, as we're opened as a modal dialog)
   openOptions: function() {
     try {
-      InfoListerWindows.open(InfoListerWindows.Prefs);
+      InfoListerWindows.openPreferences();
     } catch(e) {
       if(opener && opener.location == "chrome://infolister/content/prefs.xul")
         close();

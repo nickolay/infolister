@@ -31,7 +31,7 @@
                   oncommand="InfoListerWindows.open(InfoListerWindows.Info);"/>
         <menuseparator/>
         <menuitem id="infolister-tbctx-options" label="&openoptions.label;"
-                  oncommand="InfoListerWindows.open(InfoListerWindows.Prefs);"/>
+                  oncommand="InfoListerWindows.openPreferences();"/>
         <menuitem id="infolister-tbctx-upload" label="&upload.label;"
                   oncommand="InfoListerService.uploadInfo();"/>
       </popup>
