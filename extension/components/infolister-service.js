@@ -685,7 +685,7 @@ InfoListerChannel.prototype = {
 
   // nsIRequest
   isPending: function () 
-  { 
+  {
     return true;
   },
   
@@ -720,8 +720,10 @@ function LOG(aMsg) {
   var self = arguments.callee;
   if(!("enabled" in self))
     self.enabled = ILPrefs.getBoolPref("logging.enabled");
-  if(self.enabled)
+  if(self.enabled) {
+    dump("InfoLister: " + aMsg + "\n");
     ILHelpers.dump(aMsg);
+  }
 }
 
 function LOG_ERROR(e) {
