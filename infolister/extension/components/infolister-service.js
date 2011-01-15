@@ -30,20 +30,12 @@ function requires(aScript) {
 }
 
 function loadJetpackModule(module) {
-  // see bug 567642 comment 13...
-  if (!loadJetpackModule.contractID) {
-    var contractID = "@mozilla.org/harness-service;1?id=jid0-4g7AasBscUrADY8rYIbIJ5BmrUY";
-    var testContractID = "@mozilla.org/harness-service;1?id=6724fc1b-3ec4-40e2-8583-8061088b3185";
-    if (contractID in Components.classes) {
-      loadJetpackModule.contractID = contractID;
-    } else if (testContractID in Components.classes) {
-      LOG_ERROR("InfoLister: running in test mode!");
-      loadJetpackModule.contractID = testContractID;
-    }
-  }
+  // NOTE: must match the value in package.json and chrome.manifest
+  var harnessContractID =
+    "@mozilla.org/harness-service;1?id=jid0-4g7AasBscUrADY8rYIbIJ5BmrUY";
 
   try {
-    return Components.classes[loadJetpackModule.contractID].
+    return Components.classes[harnessContractID].
       getService().wrappedJSObject.loader.require(module);
   } catch(e) {
     dump("InfoLister error while loading module '" + module + "': " + e + "\n");
