@@ -7,6 +7,7 @@
     <em:version>0.10.4a</em:version> <!-- FIXME: address fixme markers before releasing -->
     <em:type>2</em:type>
     <em:bootstrap>false</em:bootstrap>
+    <em:unpack>true</em:unpack>
 
     <!-- Target Application this extension can install into, 
          with minimum and maximum supported versions. --> 
