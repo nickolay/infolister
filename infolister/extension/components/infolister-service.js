@@ -32,7 +32,7 @@ function requires(aScript) {
 function loadJetpackModule(module) {
   // NOTE: must match the value in package.json and chrome.manifest
   var harnessContractID =
-    "@mozilla.org/harness-service;1?id=jid0-4g7AasBscUrADY8rYIbIJ5BmrUY";
+    "@mozilla.org/harness-service;1?id={3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8}";
 
   try {
     return Components.classes[harnessContractID].

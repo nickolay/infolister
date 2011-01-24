@@ -1,7 +1,7 @@
 # Note that the harness CID is duplicated in infolister-service.js and package.json
 component {cbae6be2-c1e8-4c42-9f8b-9b73dbf8930d} components/harness.js
-contract @mozilla.org/harness-service;1?id=jid0-4g7AasBscUrADY8rYIbIJ5BmrUY {cbae6be2-c1e8-4c42-9f8b-9b73dbf8930d}
-category profile-after-change InfoListerHarness @mozilla.org/harness-service;1?id=jid0-4g7AasBscUrADY8rYIbIJ5BmrUY
+contract @mozilla.org/harness-service;1?id={3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8} {cbae6be2-c1e8-4c42-9f8b-9b73dbf8930d}
+category profile-after-change InfoListerHarness @mozilla.org/harness-service;1?id={3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8}
 
 component {55b75ad5-a4dd-445e-91a0-4ef9a6c24cfe} components/infolister-service.js
 contract @mozilla.doslash.org/infolister/service;1 {55b75ad5-a4dd-445e-91a0-4ef9a6c24cfe}
