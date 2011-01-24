@@ -231,7 +231,7 @@ InfoListerServiceImpl.prototype = {
                     self._callbacks[i](output);
                   }
                   self._callbacks.length = 0;
-                }, true); // FIXME
+                });
             }
           );
         } else {
@@ -285,7 +285,8 @@ InfoListerServiceImpl.prototype = {
    * aNeedXPILinks.value to true, if the selected template needs XPI links 
    * information.
    */
-  getFormattedData: function(haveFormattedDataCallback) { // FIXME
+  getFormattedData: function(haveFormattedDataCallback) {
+    // FIXME: clean this up. This used to be non-async, and there's a ...withCallback variant of this...
     var needXPILinks = {value: false};
     var self = this;
     this.getDataAsXML(function haveXMLData() {
