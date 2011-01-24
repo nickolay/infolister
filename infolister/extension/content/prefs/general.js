@@ -44,7 +44,7 @@ var OutputFilePref = {
   // display a filepicker to set the output file
   browseForFile: function() {
     var file = this.getOutputFile();
-    var rv = ILHelpers.pickFile("", file);
+    var rv = ILHelpers.pickFile(window, "", file);
     if(!rv) return; // Cancel
 
     this._outputFile = rv.file;

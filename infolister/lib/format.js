@@ -278,11 +278,3 @@ function _formatXML() {
   }
   return "";
 }
-
-// change '\n' line-breaks used in DOM to platform-specific line-breaks
-function fixLineBreaks(aText) {
-  var platform = InfoListerWindows.anyWindow.navigator.platform.toLowerCase();
-  if(platform.indexOf("win") > -1)
-    return aText.replace(/\n/mg, "\r\n");
-  return aText;
-}

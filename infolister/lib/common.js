@@ -158,7 +158,7 @@ var ILHelpers = {
         compare(this.appInfo.platformVersion, compareVersion);
   },
 
-  pickFile: function(aTitle, aDefaultFile, aLoad)
+  pickFile: function(window, aTitle, aDefaultFile, aLoad)
   { // show filepicker, return selected file name.
     var fp = ILHelpers.createInstance("filepicker;1", "nsIFilePicker");
     fp.init(window, aTitle, aLoad ? fp.modeOpen : fp.modeSave);

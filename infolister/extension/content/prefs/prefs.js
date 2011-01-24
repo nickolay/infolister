@@ -14,7 +14,7 @@ function getStr(aStr) {
 }
 
 function pickFile(pref, load) {
-  var rv = ILHelpers.pickFile("", getPref(pref), load);
+  var rv = ILHelpers.pickFile(window, "", getPref(pref), load);
   if(!rv) return; // cancel
   setPref(pref, rv.file);
 }

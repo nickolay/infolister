@@ -62,7 +62,7 @@ var InfoLister = {
   // Selects a file, and saves the info there.
   pickAndSave: function()
   {
-    var rv = ILHelpers.pickFile("", null);
+    var rv = ILHelpers.pickFile(window, "", null);
     if(!rv) return;
 
     InfoListerService.saveToFile(rv.file);
