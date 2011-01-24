@@ -1,0 +1,21 @@
+To hack on InfoLister you need to check out other packages from git:
+
+    git clone git://github.com/nickolay/addon-sdk.git -b WIP-xul-extensions addon-sdk/
+    git clone git://github.com/nickolay/jetpack-httpd.git infolister/packages/
+
+To run tests or run the target application with InfoLister installed, you'll need to use
+the 'cfx' tool from the Addon SDK (see https://jetpack.mozillalabs.com/sdk/latest/docs/ ):
+
+    cd addon-sdk
+    . bin/activate
+    cd ../infolister
+    cfx -a firefox -b <path to firefox> --templatedir extension run
+
+You can use 'test' instead of 'run' to run the test suite, or 'xpi' to generate the XPI.
+
+I find useful to develop using a permanent Firefox profile instead of a temporary one
+cfx uses by default. This can be done by adding this parameter to the cfx command line:
+
+    --profiledir <path to initially empty folder>
+
+Example start scripts I use on Mac OS X are checked into the root of this repository (*.sh).

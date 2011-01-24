@@ -1,4 +1,0 @@
-Gecko 2.0 uses the new way of XPCOM components registration (via chrome.manifest),
-which the Addon SDK doesn't support well. My current workaround is to apply the
-patch <jetpack-gecko-2.0.patch> to the Addon SDK and register the jetpack harness
-component with a static CID/contract ID (FIXME)

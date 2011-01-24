@@ -4,7 +4,7 @@
      xmlns:em="http://www.mozilla.org/2004/em-rdf#">
   <Description about="urn:mozilla:install-manifest">
     <em:id>{3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8}</em:id>
-    <em:version>0.10.4a</em:version> <!-- FIXME: address fixme markers before releasing -->
+    <em:version>0.10.4a1</em:version> <!-- FIXME: address fixme markers before releasing -->
     <em:type>2</em:type>
     <em:bootstrap>false</em:bootstrap>
     <em:unpack>true</em:unpack>
