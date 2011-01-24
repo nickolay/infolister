@@ -224,13 +224,7 @@ var gUpdateManifestParser = {
     try {
       var extensionRes = gRDF.GetResource("urn:mozilla:" + itemType + ":" + itemID);
       var updates = getTarget(extensionRes, "updates");
-    
-      if (!updates)
-      { // maybe we found an old update.rdf (for Firefox v0.9)
-        var updateLinkResource = getTarget(extensionRes, "updateLink");
-        return valueOf(updateLinkResource);
-      }
-    
+
       var updatesCont = CC["@mozilla.org/rdf/container;1"].createInstance(CI.nsIRDFContainer);
       updatesCont.Init(datasource, updates.QueryInterface(CI.nsIRDFResource));
     
