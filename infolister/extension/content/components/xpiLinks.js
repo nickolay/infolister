@@ -121,7 +121,6 @@ var gLinksCollector = {
       } catch (e) {}
   
       if (!dsURI) {
-        // FIXME we don't have access to updateURL via AM API in Fx4
         dsURI = addon.getAttribute("updateURL");
         LOG_xpiLinks("getting updateURL: " + dsURI, itemID)
       } if (!dsURI) {
