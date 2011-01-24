@@ -6,7 +6,7 @@
 <overlay id="infolister-overlay"
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" >
 
-  <script src="common.js"/>
+  <script src="common-shim.js"/>
   <script src="overlay.js"/>
 
   <menupopup id="taskPopup">
