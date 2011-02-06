@@ -58,6 +58,8 @@
     <em:iconURL>chrome://infolister/skin/icon32x32.png</em:iconURL>
     <em:homepageURL>http://mozilla.doslash.org/infolister</em:homepageURL>
     <em:optionsURL>chrome://infolister/content/prefs/prefs.xul</em:optionsURL>
+    <em:updateKey>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCvvgHYV9Gc8vNSQAuDx7McP5A93skdsACyn0H8j9wAt1sS98/6Vu3uN5FGQYh52v963Fc8l5X2Yx2QXCU/eJ5yabrWQ6pJCSHCoZfXveHVH7YTbO7kkK9K2YqzxEkEAjkks3LHuoo55RecBd11JBHAvfhiPomHrk9YCCGAGk3ifwIDAQAB</em:updateKey>
+    <em:updateURL></em:updateURL>
 
     <!-- chronological order, translators after contributors -->
     <em:contributor>Torisugari</em:contributor>

@@ -3,7 +3,7 @@
 <project id="1c7d6292-3c19-fa48-a8de-23fc65c830a2" kpf_version="5" name="infolister.komodoproject">
 <preference-set idref="1c7d6292-3c19-fa48-a8de-23fc65c830a2">
   <string relative="path" id="import_dirname"></string>
-  <string id="import_exclude_matches">*.*~;*.bak;*.tmp;CVS;.#*;*.pyo;*.pyc;.svn;*%*;tmp*.html;.DS_Store;.hg;profile;profile-3.6;.git</string>
+  <string id="import_exclude_matches">*.*~;*.bak;*.tmp;CVS;.#*;*.pyo;*.pyc;.svn;*%*;tmp*.html;.DS_Store;.hg;profile;profile-3.6;.git;addon-sdk</string>
   <string id="import_include_matches"></string>
   <boolean id="import_live">1</boolean>
   <boolean id="import_recursive">1</boolean>
