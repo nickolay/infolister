@@ -30,26 +30,14 @@
       </Description>
     </em:targetApplication>
 
-    <!-- Sunbird's last release was based on Gecko 1.9.1, which the Addon SDK
-         doesn't support. When removing from the source tree, also remove
-         sb-overlay.xul
-    <em:targetApplication>
-      <Description>
-        <em:id>{718e30fb-e89b-41dd-9da7-e25a45638b28}</em:id>
-        <em:minVersion>0.9</em:minVersion>
-        <em:maxVersion>0.9</em:maxVersion>
-      </Description>
-    </em:targetApplication-->
-
-    <!-- SeaMonkey: the earliest release based on Gecko 1.9.2 or later is
-         2.1b1, which is rather old and doesn't appear to work.
+    <!-- SeaMonkey -->
     <em:targetApplication>
     <Description>
         <em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id>
-        <em:minVersion>2.1b1</em:minVersion>
-        <em:maxVersion>2.1b1</em:maxVersion>
+        <em:minVersion>2.1b2pre</em:minVersion>
+        <em:maxVersion>2.1b2</em:maxVersion>
     </Description>
-    </em:targetApplication-->
+    </em:targetApplication>
 
     <!-- Front End MetaData -->
     <em:name>InfoLister</em:name>
