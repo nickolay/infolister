@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=ISO-8859-1"/>
+ <meta name="author" content="Nickolay Ponomarev" />
+ <meta name="keywords" content="Help set up FTP upload InfoLister" /> 
+ <link rel="stylesheet" type="text/css" href="ftp.css"/> 
+ <title>InfoLister Help: Setting upload options in InfoLister</title>
+</head>
+
+<body>
+
+<h1>Setting upload options in InfoLister.</h1>
+<p><a href="..">&lt; Back to main page</a></p>
+
+<div class="q">
+<h2>Step-by-step guide</h2>
+<p>Setting up Upload in InfoLister is very easy. Here&apos;s a step-by-step guide:</p>
+
+<ul>
+<li><b>1.</b>   Make sure you have latest version of InfoLister installed and that you are running Firefox or Nvu (Thunderbird version of InfoLister doesn&apos;t support uploading).</li>
+
+<li><b>2.</b>   Select <q>Tools > Extensions</q>. (Extensions Manager window will open.)</li>
+
+<li><b>3.</b>   In that window find InfoLister entry and double-click it. (<q>InfoLister options</q> window will open.)</li>
+
+<li><b>4.</b>   In <q>InfoLister options</q> window select <q>FTP Settings</q> tab. You will see a dialog like this:<br/> <img src="ftp-options-0.9.png" alt="FTP Settings dialog"/></li>
+
+<li><b>5.</b>   Fill in the form. You should get your host, user name and password from your hosting provider. In the path field enter the server path  to the file you want to upload to <strong>including file name</strong> (<strong>not</strong> including the domain name, but <strong>including</strong> the real path to the file on the server).</li>
+
+<li><b>6.</b>   Click Upload button. The information should be uploaded to the location you selected.</li>
+
+</ul>
+
+</div>
+
+<div id="troubleshoot" class="q">
+<h2>Troubleshooting</h2>
+
+<ul>
+<li><h3>When I click Upload nothing happens!</h3>
+<p>This probably means you&apos;re using InfoLister 0.8. It had a typo in its code, which prevented the upload button from working. Try the upload button in main InfoLister window or upgrade to a newer version. If the problem persists, please report it to the author (see below). Be sure to include InfoLister and host application (Firefox or Nvu) versions and any InfoLister-related messages you see in <q>Tools > JavaScript Console</q>.</p></li>
+
+<li><h3>It says it uploaded the file, but it's not on the server!</h3>
+<p>This probably means you specified the wrong path. My testing has shown that InfoLister neither complains about nor creates non-existent directories specified in path.<br/>
+Also, remember that the publicly accessible files usually are in a <tt>www</tt> or <tt>public_html</tt> subdirectory.<br/>
+If nothing else helps, open the FTP client that works, navigate to the directory you want to upload the file to and copy the path to InfoLister settings.</p>
+</li>
+
+<li><h3>I get <q>The browser is currently offline</q> message.</h3>
+<p>Uncheck <q>File > Work Offline</q> and try again.</p></li>
+
+<li><h3>I get <q>The lookup of a hostname failed</q>, <q>The connection was refused</q> or <q>The operation timed out</q> message.</h3>
+<p>Check the value in the Host textbox.
+Try again later, it may be due to network problems. Also make sure your firewall software doesn&apos;t block host application (Firefox or Nvu).</p></li>
+
+<li><h3>I get <q>Login Failure</q> message.</h3>
+<p>Check your user name and password. Try logging in to the server with a real FTP client to see if your login information is correct.</p></li>
+
+<li><h3>I get one of these messages <q>FTP CWD Failure</q>, <q>FTP PASV Failure</q>, <q>FTP PWD Failure</q>, <q>FTP List Failure</q>.</h3>
+<p>This probably indicates a problem with the FTP server. Try connecting using a real FTP client to see if it works.</p></li>
+
+<li><h3>I get an <q>Unexpected Error</q> message.</h3>
+<p>Try creating new <a href="http://mozilla.org/support/firefox/profile">Firefox profile</a>. If this helps, something must be wrong with your current configuration or InfoLister settings. Otherwise, please report this problem to the author (see below).</p></li>
+
+</ul>
+
+
+</div>
+
+<div class="q">
+<h2>Further help</h2>
+<p>If you read this page and still need assistance with setting up InfoLister&apos;s upload options or want to report a bug, try posting in <a href="http://forums.mozillazine.org/viewtopic.php?t=129026">InfoLister thread</a> at MozillaZine forums.</p>
+
+<p>Feel free to send corrections and contributions to this page to me directly: <a href="mailto:asqueella+infolister@gmail.com">asqueella+infolister@gmail.com</a>.</p>
+</div>
+
+</body>
+</html>

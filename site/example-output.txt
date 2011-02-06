@@ -1,0 +1,16 @@
+Last updated: Tue, 28 Dec 2004 04:03:19 GMT 
+User Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.5) Gecko/20041206 Thunderbird/1.0 
+
+Extensions (enabled: 6, disabled: 3)
+* Extension manager tweak 0.1 
+* Extensions Window Performance Patch 0.1 [Disabled] 
+* Minimize to Tray 0.0.1.20040828+
+* URI id 0.0.6} [Disabled]
+* DOM Inspector 0.0.1
+* MagicSLR US 0.7.1} [Disabled]
+* QuickNote 0.6
+* Extension Developer 0.2.0.20041209
+* InfoLister 0.8
+
+Themes (1)
+  * Thunderbird (default) 2.0 [selected]
