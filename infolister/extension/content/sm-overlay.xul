@@ -26,7 +26,7 @@
 
   <window id="main-window">
     <popupset id="mainPopupSet">
-      <popup id="infolister-context-menu">
+      <menupopup id="infolister-context-menu">
         <menuitem id="infolister-tbctx-open" label="&openinfo.label;" default="true"
                   oncommand="InfoListerWindows.open(InfoListerWindows.Info);"/>
         <menuseparator/>
@@ -34,7 +34,7 @@
                   oncommand="InfoListerWindows.openPreferences();"/>
         <menuitem id="infolister-tbctx-upload" label="&upload.label;"
                   oncommand="InfoListerService.uploadInfo();"/>
-      </popup>
+      </menupopup>
     </popupset>
   </window>
 

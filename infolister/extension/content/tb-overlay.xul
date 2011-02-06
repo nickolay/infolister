@@ -23,12 +23,12 @@
   </toolbarpalette>
 
   <window id="messengerWindow">
-    <popup id="infolister-context-menu">
+    <menupopup id="infolister-context-menu">
       <menuitem id="infolister-tbctx-open" label="&openinfo.label;" default="true"
                 oncommand="InfoListerWindows.open(InfoListerWindows.Info);"/>
       <menuitem id="infolister-tbctx-options" label="&openoptions.label;"
                 oncommand="InfoListerWindows.openPreferences();"/>
-    </popup>
+    </menupopup>
   </window>
 
 </overlay>

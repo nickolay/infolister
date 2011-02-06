@@ -5,7 +5,7 @@
 <overlay id="infolister-overlay"
           xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" >
 
-  <script src="common.js"/>
+  <script src="common-shim.js"/>
   <script src="overlay.js"/>
 
   <toolbarpalette id="MsgComposeToolbarPalette">
@@ -18,12 +18,12 @@
   </toolbarpalette>
 
   <window id="msgcomposeWindow">
-    <popup id="infolister-context-menu">
+    <menupopup id="infolister-context-menu">
       <menuitem id="infolister-tbctx-open" label="&openinfo.label;" default="true"
                 oncommand="InfoListerWindows.open(InfoListerWindows.Info);"/>
       <menuitem id="infolister-tbctx-options" label="&openoptions.label;"
                 oncommand="InfoListerWindows.openPreferences();"/>
-    </popup>
+    </menupopup>
   </window>
 
 </overlay>
