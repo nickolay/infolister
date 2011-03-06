@@ -1,0 +1,9 @@
+<!ENTITY title "InfoLister">
+
+<!ENTITY desc "Här är information om ditt program. Du kan anpassa den genom att klicka på knappen &quot;Inställningar...&quot; nedan">
+<!ENTITY hint.about.info "Du kan även visa den här informationen direkt i din webbläsare genom att skriva &quot;about:info&quot; (utan citationstecken) i adressfältet.">
+
+<!ENTITY save "Spara...">
+<!ENTITY upload "Ladda upp">
+<!ENTITY prefs "Inställningar...">
+<!ENTITY close "Stäng">

@@ -62,8 +62,11 @@
     <em:translator>SlovakSoft (Slovak)</em:translator>
     <em:translator>Wronschien (French)</em:translator>
     <em:translator>Unghost (Russian)</em:translator>
-    <!-- Z should be #x017B (capital Z dot above), but cfx xpi chokes on it currently... -->
+    <!-- XXX: Z should be #x017B (capital Z dot above), but cfx xpi chokes on it currently...
+         http://code.google.com/p/infolister/issues/detail?id=11 -->
     <em:translator>Leszek(teo)Zyczkowski (Polish)</em:translator>
     <em:translator>Haebaru (Japanese)</em:translator>
+    <!-- XXX: a in Ornas should be U+00E4 -->
+    <em:translator>Mikael Hiort af Ornas (Swedish)</em:translator>
   </Description>
 </RDF>

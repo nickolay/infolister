@@ -1,8 +1,11 @@
 InfoLister changelog.
 
 0.10.4a2 [in development]
+- Mark as compatible with SeaMonkey 2.1b2 (per Philip Chee)
+- Small bugfixes for the infolister button <http://code.google.com/p/infolister/source/detail?r=f9b2787ba5>
 - Removed vestiges of Nvu & Sunbird support (the applications themselves
   have been discontinued)
+- added sv-SE translation (thanks Mikael Hiort af Ornäs!)
 
 0.10.4a1 [2011-01-26]
 - Firefox 4, Thunderbird 3.1 - 3.3 compatibility

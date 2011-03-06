@@ -1,0 +1,14 @@
+text/plain;Oformaterad text;[[Senast uppdaterad: %lastupd%
+
+]][[Användaragent: %useragent%
+
+]][[*** Tillägg (aktiverade: %enabled_extensions_count%, inaktiverade: %disabled_extensions_count%; totalt: %extensions_count%)
+{{extension:%name% %version% %disabled-text%
+}}
+]][[*** Teman (%themes_count%)
+{{theme:%name% %selected-text%
+}}
+]][[*** Insticksmoduler
+{{plugin:%name%
+}}
+]]

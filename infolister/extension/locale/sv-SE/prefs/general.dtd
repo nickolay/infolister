@@ -1,0 +1,14 @@
+<!ENTITY autosave.label "Spara automatiskt till en lokal fil vid programstart:">
+<!ENTITY autosave.accesskey "S">
+<!ENTITY clear.label "Rensa">
+<!ENTITY clear.accesskey "R">
+
+<!ENTITY browse.label "Bläddra...">
+<!ENTITY browse.accesskey "B">
+
+<!ENTITY menuitem.label "Visa menyobjekt i Verktyg-menyn">
+<!ENTITY menuitem.accesskey "V">
+
+<!ENTITY showinfo.label "Visa information">
+<!ENTITY showinfo.accesskey "i">
+<!ENTITY showinfo.description "Du kan även öppna InfoListers huvudfönster via verktygsfältsknappen. Hittas via &quot;Visa &gt; Verktygsfält &gt; Anpassa...&quot;.">

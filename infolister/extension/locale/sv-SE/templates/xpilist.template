@@ -1,0 +1,16 @@
+text/plain;XPI-lista;# Detta är en lista över länkar till XPI-filer för installerade objekt.
+# Jag tror att du kan använda den med Mass Installer.
+# För vissa tillägg går det inte att hitta XPI-filer.
+# Om InfoLister inte kan hitta en länk, så betyder det vanligtvis 
+# att tillägget inte har något giltigt uppdateringsmanifest.
+[[# %lastupd%
+]][[# %useragent%
+]]
+#### Tillägg
+{{extension:#%name% %version% %disabled-text%
+%xpiLink% 
+}}
+#### Teman
+{{theme:#%name% %version% %selected-text%
+%xpiLink% 
+}}
