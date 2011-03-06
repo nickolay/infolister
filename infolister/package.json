@@ -9,6 +9,8 @@
 "X-comment": "FIXME: requires https://github.com/mozilla/addon-sdk/pull/92",
 "X-NOTE": "must match the CID in chrome.manifest",
     "harnessClassID": "cbae6be2-c1e8-4c42-9f8b-9b73dbf8930d",
+    "templatedir": "extension",
+
     "description": "Lists installed extensions and themes",
     "homepage": "http://mozilla.doslash.org/infolister",
 
