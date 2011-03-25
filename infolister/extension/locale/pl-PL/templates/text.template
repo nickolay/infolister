@@ -1,0 +1,14 @@
+text/plain;Prosty tekst;[[Wygenerowano: %lastupd%
+
+]][[User Agent: %useragent%
+
+]][[*** Rozszerzenia (włączone: %enabled_extensions_count%, wyłączone: %disabled_extensions_count%; total: %extensions_count%)
+{{extension:%name% %version% %disabled-text%
+}}
+]][[*** Motywy (%themes_count%)
+{{theme:%name% %selected-text%
+}}
+]][[*** Wtyczki
+{{plugin:%name%
+}}
+]]

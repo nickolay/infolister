@@ -1,0 +1,15 @@
+<!ENTITY ftp.remotegroup.label "Fjärrfilsinformation">
+<!ENTITY ftp.user.label "Användarnamn:">
+<!ENTITY ftp.user.accesskey "A">
+<!ENTITY ftp.password.label "Lösenord:">
+<!ENTITY ftp.password.accesskey "L">
+<!ENTITY ftp.host.label "Värd:">
+<!ENTITY ftp.host.accesskey "V">
+<!ENTITY ftp.path.label "Sökväg:">
+<!ENTITY ftp.path.accesskey "S">
+
+<!ENTITY autoupload.label "Överför automatiskt vid programavslut">
+<!ENTITY autoupload.accesskey "Ö">
+
+<!ENTITY uploadnow.label "Ladda upp nu">
+<!ENTITY uploadnow.accesskey "n">

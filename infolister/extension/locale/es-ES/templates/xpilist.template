@@ -1,0 +1,12 @@
+text/plain;XPI List;# Esta es una lista de enlaces a los XPIs de los items instalados.
+# Creo que puede utilizarse con Mass Installer.
+# A veces no se puede encontrar los XPI de algunas extensiones.
+# Si InfoLister no puede encontrar un enlace, eso normalmente significa 
+# que la extensión no tiene una declaración de actualización válida.
+
+[[# %lastupd%
+]][[# %useragent%
+]]
+{{extension:#%name% %version% %disabled-text%
+%xpiLink% 
+}}

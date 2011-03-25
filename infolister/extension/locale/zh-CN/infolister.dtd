@@ -1,0 +1,7 @@
+<!ENTITY title "InfoLister">
+<!ENTITY desc "这里有一些关于您的应用程序的信息。可以通过点击'选项'按钮来设置。">
+<!ENTITY hint.about.info "也可以在地址栏直接输入'about:info' (不含引号)来直接查看。">
+<!ENTITY save "保存...">
+<!ENTITY upload "上传">
+<!ENTITY prefs "选项...">
+<!ENTITY close "关闭">

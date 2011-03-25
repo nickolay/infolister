@@ -1,0 +1,14 @@
+text/plain;Plain Text;[[Naposledy aktualizované: %lastupd%
+
+]][[Identifikácia: %useragent%
+
+]][[*** Rozšírenia (povolené: %enabled_extensions_count%, zakázané: %disabled_extensions_count%; celkom: %extensions_count%)
+{{extension:%name% %version% %disabled-text%
+}}
+]][[*** Témy (%themes_count%)
+{{theme:%name% %selected-text%
+}}
+]][[*** Zásuvné moduly
+{{plugin:%name%
+}}
+]]

@@ -1,0 +1,11 @@
+<!ENTITY title "Inställningar för InfoLister">
+
+<!ENTITY prefwindow.style "width: 40em;">
+<!ENTITY prefwindow.fixedheight "28em">
+
+<!ENTITY apply "Verkställ">
+<!ENTITY apply.accesskey "k">
+
+<!ENTITY general_tab "Allmänt">
+<!ENTITY pattern_tab "Utdata">
+<!ENTITY upload_tab "Överföring">

@@ -1,0 +1,14 @@
+<!ENTITY autosave.label "Beim Start automatisch in lokaler Datei speichern:">
+<!ENTITY autosave.accesskey "a">
+<!ENTITY clear.label "Löschen">
+<!ENTITY clear.accesskey "L">
+
+<!ENTITY browse.label "Durchsuchen...">
+<!ENTITY browse.accesskey "D">
+
+<!ENTITY menuitem.label "Eintrag im Menü &quot;Extras&quot; anzeigen">
+<!ENTITY menuitem.accesskey "E">
+
+<!ENTITY showinfo.label "Informationen anzeigen...">
+<!ENTITY showinfo.accesskey "I">
+<!ENTITY showinfo.description "Das Informationsfenster ist auch über eine Schaltfläche zugänglich, die über das Menü &quot;Ansicht &gt; Symbolleisten &gt; Anpassen...&quot; angelegt werden kann.">

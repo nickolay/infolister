@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://infolister/locale/prefs/pattern.dtd">
+
+<overlay id="PatternPaneOverlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <!-- XXX so we have an ugly bug here: if this pane is opened at startup, the
+       DOM methods used to populate the templates menulist misbehave.
+    -->
+  <prefpane id="panePattern" onpaneload="setTimeout(onPatternPaneLoad, 0)">
+    <script src="pattern.js"/>
+    <preferences>
+      <preference id="pref_template.uri" name="extensions.infolister.template.uri" type="string"/>
+      <preference id="pref_template.custom" name="extensions.infolister.template.custom" type="file"/>
+
+      <preference id="pref_XML.lastupd" name="extensions.infolister.XML.lastupdbool" type="bool"/>
+      <preference id="pref_XML.ua"      name="extensions.infolister.XML.uabool"      type="bool"/>
+      <preference id="pref_XML.extension" name="extensions.infolister.XML.extensionbool" type="bool"/>
+      <preference id="pref_XML.theme"   name="extensions.infolister.XML.themebool"   type="bool"/>
+      <preference id="pref_XML.plugin" name="extensions.infolister.XML.pluginbool" type="bool"/>
+
+      <preference id="pref_XSLT.file" name="extensions.infolister.XSLT.file" type="string"/>
+    </preferences>
+
+    <groupbox>
+      <caption label="&XML.choose;"/>
+      <grid>
+        <rows>
+          <row>
+            <checkbox label="&lastupd.label;" accesskey="&lastupd.accesskey;" preference="pref_XML.lastupd"/>
+            <checkbox label="&ua.label;" accesskey="&ua.accesskey;" preference="pref_XML.ua"/>
+          </row>
+          <row>
+            <checkbox label="&extension.label;" accesskey="&extension.accesskey;" preference="pref_XML.extension"/>
+            <checkbox label="&theme.label;" accesskey="&theme.accesskey;" preference="pref_XML.theme"/>
+            <checkbox label="&plugin.label;" accesskey="&plugin.accesskey;" preference="pref_XML.plugin"/>
+          </row>
+          <row>
+          </row>
+        </rows>
+      </grid>
+    </groupbox>
+
+    <groupbox>
+      <caption label="&formatting.choose;"/>
+
+      <grid flex="1">
+        <columns>
+          <column/>
+          <column flex="1"/>
+        </columns>
+        <rows>
+          <row align="center">
+            <label value="&format.label;" accesskey="&format.accesskey;" control="template"/>
+            <menulist id="template" preference="pref_template.uri"
+                      oncommand="onTemplateSelected(event);">
+              <menupopup id="templatesContainer">
+                <menuitem id="hack15" label="..." style="visibility:hidden;"/>
+              </menupopup>
+            </menulist>
+          </row>
+          <row align="center">
+            <!-- three decks left to right: label, wide control, button -->
+            <deck id="contextDeck0"> <!-- XXX align the labels vertically -->
+              <spacer/>
+              <label value="&template.label;" class="text-link"
+                     href="http://mozilla.doslash.org/infolister/templates" />
+              <label value="&stylesheet.label;" 
+                     accesskey="&stylesheet.accesskey;" control="XSLT.file"/>
+              <spacer/>
+            </deck>
+            <deck id="contextDeck1">
+              <spacer/>
+              <hbox align="center">
+                <textbox id="custom-template" flex="1" readonly="true" 
+                         preference="pref_template.custom" 
+                         onsyncfrompreference="var f=getPref('template.custom'); return f?f.path:null;"/>
+              </hbox>
+              <hbox align="center">
+                <textbox id="XSLT.file" flex="1" preference="pref_XSLT.file"/>
+              </hbox>
+              <hbox pack="end">
+                <!--button label="&reloadXPILinks.label;" 
+                        accesskey="&reloadXPILinks.accesskey;" 
+                        oncommand="reloadXPILinks();"/-->
+              </hbox>
+            </deck>
+            <deck id="contextDeck2">
+              <spacer/>
+              <button label="&browse.label;" accesskey="&browse.accesskey;" 
+                      oncommand="pickFile('template.custom', true);"/>
+              <spacer/>
+              <spacer/>
+            </deck>
+          </row>
+        </rows>
+      </grid>
+
+    </groupbox>
+  </prefpane>
+
+</overlay>

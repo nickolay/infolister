@@ -1,0 +1,25 @@
+<!ENTITY XML.choose "Wybierz informacje, które mają być załączone do raportu">
+<!ENTITY lastupd.label "Czas wygenerowania">
+<!ENTITY lastupd.accesskey "C">
+<!ENTITY ua.label "User agent">
+<!ENTITY ua.accesskey "U">
+<!ENTITY plugin.label "Lista wtyczek">
+<!ENTITY plugin.accesskey "W">
+<!ENTITY extension.label "Lista rozszerzeń">
+<!ENTITY extension.accesskey "R">
+<!ENTITY theme.label "Lista motywów">
+<!ENTITY theme.accesskey "M">
+<!ENTITY formatting.choose "Konfiguracja formatu raportu:">
+<!ENTITY format.label "Formatuj jako:">
+<!ENTITY format.accesskey "F">
+<!ENTITY template.label "Plik szblonu:">
+<!ENTITY stylesheet.label "Arkusz stylów:">
+<!ENTITY stylesheet.accesskey "S:">
+<!ENTITY reloadXPILinks.label "Odśwież odnośniki *.xpi">
+<!ENTITY reloadXPILinks.accesskey "O">
+<!ENTITY browse.label "Szukaj">
+<!ENTITY browse.accesskey "S">
+<!ENTITY XSLT.caption "Arkusz stylów XSLT: ">
+<!ENTITY XSLT.dontuse "Nie używaj XSLT">
+<!ENTITY XSLT.addPI "Dodaj instrukcję przetwarzania do pliku XML">
+<!ENTITY XSLT.autoapply "Zastosuj transformację automatycznie">

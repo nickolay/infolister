@@ -1,0 +1,127 @@
+InfoLister changelog.
+
+0.10.4a2 [in development]
+- Mark as compatible with SeaMonkey 2.1b2 (per Philip Chee)
+- Small bugfixes for the infolister button <http://code.google.com/p/infolister/source/detail?r=f9b2787ba5>
+- Removed vestiges of Nvu & Sunbird support (the applications themselves
+  have been discontinued)
+- added sv-SE translation (thanks Mikael Hiort af Ornäs!)
+
+0.10.4a1 [2011-01-26]
+- Firefox 4, Thunderbird 3.1 - 3.3 compatibility
+- Started switching to the Addon SDK.
+
+0.10.3 [2009-01-08]
+- Fixed XPI link collection dialog hanging if there are several extensions
+  using the same update manifest.
+- Fixed misbehavior when closing the InfoLister window during the XPI link
+  collection process.
+- Firefox 3.6 and Thunderbird 3 compatibility
+- dropped support for Firefox and Thunderbird < 3.0 from the install manifest.
+
+0.10.2 [2009-08-29]
+- Fixed an issue causing the Master Password prompt appearing at startup
+- Bumped maxVersion for Firefox nightlies compatibility (now 3.6a2)
+
+0.10.1 [2009-06-07]
+This version is the same as 0.10a. The only change is the version number,
+which was needed to make 0.10 automatically upgrade to this version.
+
+0.10a [2009-05-23]
+- Firefox 3.5 & Sunbird 0.9 compatibility
+- Fixed an issue with collecting links to XPIs for addons hosted on
+  addons.mozilla.org
+
+0.10
+- Firefox 3 compatibility [since 2009-05-23 also marked 3.5-compatible]
+- Sunbird 0.8 compatibility 
+
+0.9f.2:
+- bumped maxVersion for Sunbird to 0.7
+
+0.9f.1:
+- Sunbird 0.5-0.7pre - thanks Robert Brand for the patch!
+- Thunderbird 2 compatibility (just bumped the maxVersion)
+
+0.9f:
+- Firefox 2 compatibility (fixed a bug with disabled extensions not showing up as such)
+- A few locales updates
+- added nl-NL locale in a silent update on 20061025.
+
+0.9e:
+- added locales: en-US, de-DE, es-ES, fr-FR, sk-SK, it-IT, pl-PL, pt-BR, ru-RU, zh-CN, zh-TW
+- Silent update 20060824: bumped maxVersion to 2.0b2 for Firefox
+
+Changes in 0.9d.1:
+- improved XPI links collection code (thanks Dr.Evil!)
+
+Changes in 0.9d:
+- find XPIs for themes too
+
+Changes in 0.9c:
+- mark the selected theme as such (fix for regression)
+- handle unicode characters correctly when displaying and uploading the list
+- Small tweaks to the options window, now linking to help on templates at
+    <http://mozilla.doslash.org/infolister/templates/>
+
+Changes in 0.9b:
+- Firefox / Thunderbird 1.5 compatibility
+- Auto upload on exit
+- New templates system
+- Searches for direct links to XPIs (using update manifest information)
+- Simplified Options UI
+- The list is now sorted by default
+- A menu item in Tools (can be hidden with a pref)
+
+
+Changes in 0.8.2:
+- Fixed the Upload button in preferences (thanks dougw!).
+- Addded additional functions to the toolbar button:
+  * Right-click opens the options window;
+  * Middle-click opens an about:info tab (Firefox).
+- Changed the default output mode to HTML. Those who used text mode
+  will have to reset it, sorry about that.
+- OK button in options now rewrites the selected file; Write Now 
+  button is removed.
+- Made a few more strings localizable.
+- Made InfoLister work on latest trunk builds
+- Made the links in HTML view open in browser.
+- Nvu compatibility
+- More small changes
+
+Changes in 0.8:
+- IL is now able to generate output in XML. You can create an XSLT stylesheet 
+  to fully control the format of output. Available XSLT: to XHTML, to text, to BBCode.
+- A few changes to UI, among them:
+  - updated icons, correct size now (thanks Kitefighter)
+  - hid FTP stuff from Thunderbird version (it doesn't seem to support FTP upload)
+  - moved all settings to a single, tabbed window
+  - added a toolbar button to compose window, per request
+- use correct DOCTYPE in HTML mode, thanks to Ken Cooper
+- selected theme is determined correctly again
+- other small bugfixes
+
+Changes in 0.7.4, 0.7.5:
+- added em:updateURL & update testing :)
+Further updates will be automatic.
+
+Changes in 0.7.3:
+- Thunderbird (0.9+) support.
+- Fix Setttings window scrolling
+
+Changes in 0.7.2:
+- bumped firefox.maxversion to 1.0
+- small fix to "about:info" (was not working with several firefox windows under some circumstances)
+- the ftp status dialog is not hidden automatically if there was error now.
+- Moved the FTP Settings button to the same row as OK/Cancel/Apply for the sake of 800x600-ers.
+- other small fixes
+
+Changes in 0.7.1:
+- small fix to FTP code. It should now work for everybody.
+
+Changes in 0.7:
+- FTP upload. Many thanks to Torisugari who wrote the Bookmarks Synchronizer.
+  The upload code was originally copied from his extension.
+- l10n improvements, new "extensions.infolister.charset" pref specifying the charset of output file.
+- better HTML view in InfoLister window (now using type="content-primary" attribute)
+- From now on, "domi_workaround" pref is set to true by default.

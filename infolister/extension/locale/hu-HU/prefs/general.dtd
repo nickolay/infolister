@@ -1,0 +1,11 @@
+<!ENTITY autosave.label "Automatikus mentés helyi fájlba indításkor: ">
+<!ENTITY autosave.accesskey "A">
+<!ENTITY clear.label "Törlés">
+<!ENTITY clear.accesskey "T">
+<!ENTITY browse.label "Tallóz...">
+<!ENTITY browse.accesskey "l">
+<!ENTITY menuitem.label "Menüpont az eszközök menüben">
+<!ENTITY menuitem.accesskey "M">
+<!ENTITY showinfo.label "Információk">
+<!ENTITY showinfo.accesskey "S">
+<!ENTITY showinfo.description "Az InfoLister ablakot el tudod úgy is érni, hogy az ikonját az eszköztárra teszed, ehhez keresd meg a &quot;Nézed > Eszköztárak > Testreszabás...&quot; menüt.">

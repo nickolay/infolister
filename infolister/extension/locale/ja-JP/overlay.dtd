@@ -1,0 +1,6 @@
+<!ENTITY brandname.label "InfoLister">
+<!ENTITY brandname.accesskey "f">
+<!ENTITY toolbarbutton.tooltip "アプリケーションの情報を表示">
+<!ENTITY openinfo.label "情報ウィンドウを開く">
+<!ENTITY openoptions.label "InfoLister オプション">
+<!ENTITY upload.label "情報をアップロード">

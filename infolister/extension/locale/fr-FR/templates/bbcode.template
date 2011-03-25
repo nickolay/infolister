@@ -1,0 +1,20 @@
+text/plain;BBCode;Mes informations sur %app%
+[[
+Dernière mise à jour: %lastupd%]][[
+User Agent: %useragent%]]
+
+[[[b]Extensions[/b] (activées: %enabled_extensions_count%, désactivées: %disabled_extensions_count%; total: %extensions_count%)
+[list]
+{{extension:[*]%name% %version% %disabled-text%
+}}[/list]
+]][[
+[b]Thèmes[/b] (%themes_count%)
+[list]
+{{theme:[*]%name% %selected-text%
+}}[/list]
+]][[
+[b]Plugins[/b]
+[list]
+{{plugin:[*]%name%
+}}[/list]
+]]

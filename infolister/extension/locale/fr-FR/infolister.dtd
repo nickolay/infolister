@@ -1,0 +1,9 @@
+<!ENTITY title "InfoLister">
+
+<!ENTITY desc "Vous trouverez ici les informations sur votre application. Vous pouvez personnaliser en cliquant sur le bouton Options ci-dessous.">
+<!ENTITY hint.about.info "Vous pouvez aussi visualiser ces informations directement dans votre navigateur en tapant 'about:info' (sans guillemets) dans la barre d'adresse">
+
+<!ENTITY save "Sauvegarder...">
+<!ENTITY upload "Téléversement FTP">
+<!ENTITY prefs "Options...">
+<!ENTITY close "Fermer">

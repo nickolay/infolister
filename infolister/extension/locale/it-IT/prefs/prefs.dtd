@@ -1,0 +1,11 @@
+<!ENTITY title "Impostazioni di InfoLister">
+
+<!ENTITY prefwindow.style "width: 40em;">
+<!ENTITY prefwindow.fixedheight "41em">
+
+<!ENTITY apply "Applica">
+<!ENTITY apply.accesskey "A">
+
+<!ENTITY general_tab "Generali">
+<!ENTITY pattern_tab "Personalizza">
+<!ENTITY upload_tab "Carica">

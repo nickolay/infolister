@@ -1,0 +1,37 @@
+text/html;Simple HTML;<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Informácie o %app%</title>
+  <!--link rel="stylesheet" type="text/css" href="ExtensionsList.css"-->
+</head>
+
+<body>
+[[<div class="lastupd">
+<span class="hdr">Naposledy aktualizované:</span> %lastupd%
+</div>
+]][[<div class="useragent">
+<span class="hdr">Identifikácia:</span> %useragent%
+</div>]]
+[[<div class="extensions">
+<h3><span class="hdr">Rozšírenia</span> (povolené: %enabled_extensions_count%, zakázané: %disabled_extensions_count%):</h3>
+<ul>
+{{extension: <li><a href="%homepageURL%">%name%</a> %version% %disabled-text%</li>
+}}</ul>
+</div>]]
+[[<div class="themes">
+<h3><span class="hdr">Témy</span> (%themes_count%):</h3>
+<ul>
+{{theme: <li><a href="%homepageURL%">%name%</a> %version% %selected-text%</li>
+}}
+</ul>
+</div>]]
+[[<div class="plugins">
+<h3><span class="hdr">Zásuvné moduly</span> (%plugins_count%):</h3>
+<ul>
+{{plugin: <li>%name%</li>
+}}
+</ul>
+</div>]]
+</body>
+</html>

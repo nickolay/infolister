@@ -1,0 +1,14 @@
+<!ENTITY autosave.label "Autosave to a local file on startup:">
+<!ENTITY autosave.accesskey "A">
+<!ENTITY clear.label "Clear">
+<!ENTITY clear.accesskey "C">
+
+<!ENTITY browse.label "Browse...">
+<!ENTITY browse.accesskey "B">
+
+<!ENTITY menuitem.label "Show Tools menu item">
+<!ENTITY menuitem.accesskey "S">
+
+<!ENTITY showinfo.label "Show Information">
+<!ENTITY showinfo.accesskey "S">
+<!ENTITY showinfo.description "You can also access the main InfoLister window via toolbar button, available via &quot;View > Toolbars > Customize...&quot; menu.">

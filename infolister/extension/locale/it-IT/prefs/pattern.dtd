@@ -1,0 +1,32 @@
+<!ENTITY XML.choose "Gruppi di informazioni da includere">
+<!ENTITY lastupd.label "Data dell'ultimo aggiornamento">
+<!ENTITY lastupd.accesskey "D">
+<!ENTITY ua.label "User Agent">
+<!ENTITY ua.accesskey "U">
+<!ENTITY plugin.label "Lista dei plugin">
+<!ENTITY plugin.accesskey "P">
+<!ENTITY extension.label "Lista delle estensioni">
+<!ENTITY extension.accesskey "E">
+<!ENTITY theme.label "Lista dei temi">
+<!ENTITY theme.accesskey "T">
+
+<!ENTITY formatting.choose "Formato in cui salvare il file">
+
+<!ENTITY format.label "Formato:">
+<!ENTITY format.accesskey "F">
+
+<!ENTITY template.label "Template:">
+<!ENTITY stylesheet.label "Foglio di stile:">
+<!ENTITY stylesheet.accesskey "S:">
+<!ENTITY reloadXPILinks.label "Ricarica link XPI">
+<!ENTITY reloadXPILinks.accesskey "X">
+
+
+<!ENTITY browse.label "Sfoglia...">
+<!ENTITY browse.accesskey "g">
+
+<!ENTITY XSLT.caption "Foglio di stile XSLT: ">
+<!ENTITY XSLT.dontuse "Non usare XSLT">
+<!ENTITY XSLT.addPI "Aggiungi istruzioni d'elaborazione al file XML">
+<!ENTITY XSLT.autoapply "Applica la trasformazione automaticamente">
+

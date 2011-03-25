@@ -1,0 +1,7 @@
+<!ENTITY title "InfoLister">
+<!ENTITY desc "W tym raporcie znajdują się informacje o twojej aplikacji. Tryb ich wyświetlania i zawartość można dostosować w opcjach rozszerzenia dostepnych po naciśnięciu umieszczonego poniżej przycisku &quot;Opcje&quot;.">
+<!ENTITY hint.about.info "Te informacje można również zobaczyć bezpośrednio w przeglądarce wpisując w pasku adresu &quot;about:info&quot; (bez cudzysłowów).">
+<!ENTITY save "Zapisz">
+<!ENTITY upload "Wyślij">
+<!ENTITY prefs "Opcje">
+<!ENTITY close "Zamknij">

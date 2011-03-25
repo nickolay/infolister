@@ -1,0 +1,7 @@
+<!ENTITY title "InfoLister">
+<!ENTITY desc "Itt van néhány információ a te alkalmazásodról. Ezt meg tudod változtatni, ha a Beállításokra kattintasz.">
+<!ENTITY hint.about.info "Ezeket az információkat meg tudod nézni a böngészőből, ha beírod aposztrófok nélkül 'about:info'.">
+<!ENTITY save "Mentés...">
+<!ENTITY upload "Feltöltés">
+<!ENTITY prefs "Beállítások...">
+<!ENTITY close "Bezárás">

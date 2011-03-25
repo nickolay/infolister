@@ -1,0 +1,14 @@
+text/plain;Plain Text;[[最終更新時間: %lastupd%
+
+]][[User Agent: %useragent%
+
+]][[*** 拡張機能 (有効: %enabled_extensions_count%, 無効: %disabled_extensions_count%; 合計: %extensions_count%)
+{{extension:%name% %version% %disabled-text%
+}}
+]][[*** テーマ (%themes_count%)
+{{theme:%name% %selected-text%
+}}
+]][[*** プラグイン
+{{plugin:%name%
+}}
+]]

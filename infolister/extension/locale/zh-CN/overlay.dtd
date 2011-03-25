@@ -1,0 +1,6 @@
+<!ENTITY brandname.label "InfoLister">
+<!ENTITY brandname.accesskey "f">
+<!ENTITY toolbarbutton.tooltip "显示应用程序信息">
+<!ENTITY openinfo.label "打开信息窗口...">
+<!ENTITY openoptions.label "InfoLister 选项...">
+<!ENTITY upload.label "上传信息">

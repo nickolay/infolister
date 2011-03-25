@@ -1,0 +1,14 @@
+<!ENTITY autosave.label "Salva automaticamente in un file all'avvio">
+<!ENTITY autosave.accesskey "a">
+<!ENTITY clear.label "Svuota">
+<!ENTITY clear.accesskey "t">
+
+<!ENTITY browse.label "Sfoglia...">
+<!ENTITY browse.accesskey "S">
+
+<!ENTITY menuitem.label "Visualizza &quot;InfoLister&quot; nel menu &quot;Strumenti&quot;">
+<!ENTITY menuitem.accesskey "I">
+
+<!ENTITY showinfo.label "Visualizza info">
+<!ENTITY showinfo.accesskey "V">
+<!ENTITY showinfo.description "Si può accedere alle informazioni anche tramite il pulsante di InfoLister (&quot;Visualizza > Barre degli strumenti > Personalizza...&quot;)">

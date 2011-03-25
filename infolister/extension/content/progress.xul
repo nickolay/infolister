@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE dialog SYSTEM "chrome://infolister/locale/progress.dtd">
+
+<!-- 
+  Progress dialog for XPI links discovery operation.
+ -->
+
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+    id="infolister-progress" title="&title;" buttons="cancel"
+    orient="vertical" width="430" onload="onLoad();"
+    ondialogcancel="onCancel();close();">
+
+  <script src="progress.js"/>
+
+  <description id="desc">&text;</description>
+  <progressmeter id="progressMeter" mode="determined"/>
+
+</dialog>

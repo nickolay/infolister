@@ -1,0 +1,20 @@
+text/plain;BBCode;我的 %app% 相關資訊
+[[
+最後更新時間：%lastupd%]][[
+使用者識別字串 (User Agent)：%useragent%]]
+
+[[[b]擴充套件列表[/b]（啟用：%enabled_extensions_count%，停用：%disabled_extensions_count%；總數：%extensions_count%）
+[list]
+{{extension:[*]%name% %version% %disabled-text%
+}}[/list]
+]][[
+[b]佈景主題列表[/b] (%themes_count%)
+[list]
+{{theme:[*]%name% %selected-text%
+}}[/list]
+]][[
+[b]外掛程式列表[/b]
+[list]
+{{plugin:[*]%name%
+}}[/list]
+]]

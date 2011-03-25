@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>{3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8}</em:id>
+    <em:version>0.10.4a1</em:version> <!-- FIXME: address fixme markers before releasing -->
+    <em:type>2</em:type>
+    <em:bootstrap>false</em:bootstrap>
+    <em:unpack>true</em:unpack>
+
+    <!-- Target Application this extension can install into, 
+         with minimum and maximum supported versions. --> 
+
+    <!-- Firefox -->
+    <em:targetApplication>
+      <Description>
+        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+        <em:minVersion>3.6</em:minVersion>
+        <em:maxVersion>4.0.*</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+
+    <!-- Thunderbird -->
+    <em:targetApplication>
+      <Description>
+        <em:id>{3550f703-e582-4d05-9a08-453d09bdfdc6}</em:id>
+        <em:minVersion>3.1</em:minVersion>
+        <em:maxVersion>3.3a2</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+
+    <!-- SeaMonkey -->
+    <em:targetApplication>
+    <Description>
+        <em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id>
+        <em:minVersion>2.1b2pre</em:minVersion>
+        <em:maxVersion>2.1.*</em:maxVersion>
+    </Description>
+    </em:targetApplication>
+
+    <!-- Front End MetaData -->
+    <em:name>InfoLister</em:name>
+    <em:description>Lists installed extensions and themes</em:description>
+    <em:creator>Nickolay Ponomarev</em:creator>
+    <em:iconURL>chrome://infolister/skin/icon32x32.png</em:iconURL>
+    <em:homepageURL>http://mozilla.doslash.org/infolister</em:homepageURL>
+    <em:optionsURL>chrome://infolister/content/prefs/prefs.xul</em:optionsURL>
+    <em:updateKey>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCvvgHYV9Gc8vNSQAuDx7McP5A93skdsACyn0H8j9wAt1sS98/6Vu3uN5FGQYh52v963Fc8l5X2Yx2QXCU/eJ5yabrWQ6pJCSHCoZfXveHVH7YTbO7kkK9K2YqzxEkEAjkks3LHuoo55RecBd11JBHAvfhiPomHrk9YCCGAGk3ifwIDAQAB</em:updateKey>
+    <em:updateURL></em:updateURL>
+
+    <!-- chronological order, translators after contributors -->
+    <em:contributor>Torisugari</em:contributor>
+    <em:contributor>Ralf Hasse (icons)</em:contributor>
+    <em:contributor>Rowne Mastaile</em:contributor>
+    <em:contributor>Robert Strong</em:contributor>
+    <em:contributor>zeniko</em:contributor>
+    <em:contributor>Dr. Evil</em:contributor>
+    <em:contributor>Robert Brand (Sunbird support)</em:contributor>
+    <em:contributor>Philip Chee (SeaMonkey support)</em:contributor>
+    <em:translator>Alf (Dutch)</em:translator>
+    <em:translator>SlovakSoft (Slovak)</em:translator>
+    <em:translator>Wronschien (French)</em:translator>
+    <em:translator>Unghost (Russian)</em:translator>
+    <!-- XXX: Z should be #x017B (capital Z dot above), but cfx xpi chokes on it currently...
+         http://code.google.com/p/infolister/issues/detail?id=11 -->
+    <em:translator>Leszek(teo)Zyczkowski (Polish)</em:translator>
+    <em:translator>Haebaru (Japanese)</em:translator>
+    <!-- XXX: a in Ornas should be U+00E4 -->
+    <em:translator>Mikael Hiort af Ornas (Swedish)</em:translator>
+  </Description>
+</RDF>

@@ -1,0 +1,14 @@
+text/plain;Klartext;[[Letzte Aktualisierung: %lastupd%
+
+]][[User-Agent: %useragent%
+
+]][[*** Erweiterungen (aktiviert: %enabled_extensions_count%, deaktiviert: %disabled_extensions_count%; gesamt: %extensions_count%)
+{{extension:%name% %version% %disabled-text%
+}}
+]][[*** Themes (%themes_count%)
+{{theme:%name% %selected-text%
+}}
+]][[*** Plugins
+{{plugin:%name%
+}}
+]]

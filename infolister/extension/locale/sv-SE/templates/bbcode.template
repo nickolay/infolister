@@ -1,0 +1,20 @@
+text/plain;BBCode;Min %app%-information
+[[
+Senast uppdaterad: %lastupd%]][[
+Användaragent: %useragent%]]
+
+[[[b]Tillägg[/b] (aktiverade: %enabled_extensions_count%, inaktiverade: %disabled_extensions_count%; totalt: %extensions_count%)
+[list]
+{{extension:[*][url=%homepageURL%]%name%[/url] %version% %disabled-text%
+}}[/list]
+]][[
+[b]Teman[/b] (%themes_count%)
+[list]
+{{theme:[*]%name% %selected-text%
+}}[/list]
+]][[
+[b]Insticksmoduler[/b]
+[list]
+{{plugin:[*]%name%
+}}[/list]
+]]

@@ -1,0 +1,14 @@
+text/plain;Plain Text;[[Legutóbb frissítve: %lastupd%
+
+]][[Böngészõ: %useragent%
+
+]][[*** Kiterjesztések (engedélyezve: %enabled_extensions_count%, letiltve: %disabled_extensions_count%; összesen: %extensions_count%)
+{{extension:%name% %version% %disabled-text%
+}}
+]][[*** Témák (%themes_count%)
+{{theme:%name% %selected-text%
+}}
+]][[*** Beépülõk
+{{plugin:%name%
+}}
+]]

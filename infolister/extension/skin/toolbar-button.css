@@ -1,0 +1,13 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* Toolbar button
+   Icon by Ralf Hasse (Kitefighter)
+*/
+
+#infolister-button {
+  list-style-image: url("chrome://infolister/skin/toolbar24x24.png");
+}
+
+toolbar[iconsize="small"] #infolister-button {
+  list-style-image: url("chrome://infolister/skin/toolbar16x16.png");
+}

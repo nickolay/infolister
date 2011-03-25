@@ -1,0 +1,8 @@
+<!ENTITY title "InfoLister - opcje">
+<!ENTITY prefwindow.style "width: 40em;">
+<!ENTITY prefwindow.fixedheight "28em">
+<!ENTITY apply "Zastosuj">
+<!ENTITY apply.accesskey "Z">
+<!ENTITY general_tab "Ogólne">
+<!ENTITY pattern_tab "Raport">
+<!ENTITY upload_tab "Wysyłanie">

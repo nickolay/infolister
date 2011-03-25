@@ -1,0 +1,16 @@
+text/plain;XPI List;# Zoznam prepojení na archívy XPI nainštalovaných položiek.
+# Verím, že ho môžete použiť v rozšírení Mass Installer.
+# Pre niektoré rozšírenia nie je možné nájsť odkazy na XPI.
+# Ak nemôže rozšírenie InfoLister prepojenie nájsť, zvyčajne to znamená, 
+# že rozšírenie nemá platný súbor aktualizačného manifestu.
+[[# %lastupd%
+]][[# %useragent%
+]]
+#### Rozšírenia
+{{extension:#%name% %version% %disabled-text%
+%xpiLink% 
+}}
+#### Témy
+{{theme:#%name% %version% %selected-text%
+%xpiLink% 
+}}

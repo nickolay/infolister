@@ -1,0 +1,20 @@
+text/plain;BBCode;Informacje o konfiguracji programu %app%
+[[
+Wygenerowano: %lastupd%]][[
+User Agent: %useragent%]]
+
+[[[b]Rozszerzenia[/b] (włączone: %enabled_extensions_count%, wyłączone: %disabled_extensions_count%; total: %extensions_count%)
+[list]
+{{extension:[*]%name% %version% %disabled-text%
+}}[/list]
+]][[
+[b]Motywy[/b] (%themes_count%)
+[list]
+{{theme:[*]%name% %selected-text%
+}}[/list]
+]][[
+[b]Wtyczki[/b]
+[list]
+{{plugin:[*]%name%
+}}[/list]
+]]

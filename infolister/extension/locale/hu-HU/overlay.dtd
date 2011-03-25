@@ -1,0 +1,6 @@
+<!ENTITY brandname.label "InfoLister">
+<!ENTITY brandname.accesskey "f">
+<!ENTITY toolbarbutton.tooltip "Alkalmazás információ mutatása">
+<!ENTITY openinfo.label "Információs ablak...">
+<!ENTITY openoptions.label "InfoLister beállítások...">
+<!ENTITY upload.label "Információk feltöltése">

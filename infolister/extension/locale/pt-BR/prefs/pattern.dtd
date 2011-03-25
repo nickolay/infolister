@@ -1,0 +1,25 @@
+<!ENTITY XML.choose "Selecione as partes de informações para incluir:">
+<!ENTITY lastupd.label "Último horário de atualização">
+<!ENTITY lastupd.accesskey "l">
+<!ENTITY ua.label "Usuário">
+<!ENTITY ua.accesskey "U">
+<!ENTITY plugin.label "Lista de plugins">
+<!ENTITY plugin.accesskey "p">
+<!ENTITY extension.label "Lista de extensões">
+<!ENTITY extension.accesskey "e">
+<!ENTITY theme.label "Lista de temas">
+<!ENTITY theme.accesskey "t">
+<!ENTITY formatting.choose "Configurar o formato de saída">
+<!ENTITY format.label "Formatar como:">
+<!ENTITY format.accesskey "F">
+<!ENTITY template.label "Arquivo modelo:">
+<!ENTITY stylesheet.label "Folha de estilo:">
+<!ENTITY stylesheet.accesskey "S:">
+<!ENTITY reloadXPILinks.label "Recarregar links XPI">
+<!ENTITY reloadXPILinks.accesskey "X">
+<!ENTITY browse.label "Buscar...">
+<!ENTITY browse.accesskey "B">
+<!ENTITY XSLT.caption "Folha de estilo XSLT:">
+<!ENTITY XSLT.dontuse "Não utilizar XSLT">
+<!ENTITY XSLT.addPI "Adicionar uma instrução de processamento para a saída XML">
+<!ENTITY XSLT.autoapply "Aplicar transformação automaticamente">

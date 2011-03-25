@@ -1,0 +1,15 @@
+<!ENTITY ftp.remotegroup.label "Einstellungen für Datei-Upload">
+<!ENTITY ftp.user.label "Benutzername:">
+<!ENTITY ftp.user.accesskey "B">
+<!ENTITY ftp.password.label "Passwort:">
+<!ENTITY ftp.password.accesskey "P">
+<!ENTITY ftp.host.label "Host:">
+<!ENTITY ftp.host.accesskey "H">
+<!ENTITY ftp.path.label "Pfad:">
+<!ENTITY ftp.path.accesskey "d">
+
+<!ENTITY autoupload.label "Beim Beenden automatisch hochladen">
+<!ENTITY autoupload.accesskey "A">
+
+<!ENTITY uploadnow.label "Jetzt hochladen">
+<!ENTITY uploadnow.accesskey "J">
