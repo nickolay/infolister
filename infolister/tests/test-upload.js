@@ -4,7 +4,7 @@ exports.testBasicHTTPServer = function(test) {
 
   var basePath = require("file").dirname( // the directory...
                    require("url").toFilename(__url__)); // ...this file is in
-  var {startServerAsync} = require("httpd")
+  var {startServerAsync} = require("httpd/httpd");
 
   var srv = startServerAsync(port, basePath);
 
