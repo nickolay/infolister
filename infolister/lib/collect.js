@@ -20,9 +20,9 @@ const {components, Cc, Ci} = require("chrome");
 exports.collectData = function collectData(needRecollect, requiredElements, haveDataCallback) {
   if(!doc) {
     // XXX if we need to aggregate data, load the file now
-    var impl = components.classesByID["{3a9cd622-264d-11d4-ba06-0060b0fc76dd}"]
-                         .createInstance(Ci.nsIDOMDOMImplementation);
-    doc = impl.createDocument("", "infolister", null);
+    var parser = Components.classes["@mozilla.org/xmlextras/domparser;1"]  
+             .createInstance(Components.interfaces.nsIDOMParser);
+    doc = parser.parseFromString("<infolister/>", "text/xml");  
     insertLinebreak(doc.documentElement);
   }
 
