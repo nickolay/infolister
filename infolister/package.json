@@ -1,12 +1,11 @@
 {
     "name": "infolister",
     "fullName": "InfoLister",
-    "version": "0.10.4a2", 
+    "version": "0.10.4a3", 
     "license": "MPL/GPL/LGPL", 
     "author": "Nickolay Ponomarev (asqueella@gmail.com)",
 "X-NOTE": "must match the contractID in chrome.manifest",
     "id": "{3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8}",
-"X-comment": "FIXME: requires https://github.com/mozilla/addon-sdk/pull/92",
 "X-NOTE": "must match the CID in chrome.manifest",
     "harnessClassID": "cbae6be2-c1e8-4c42-9f8b-9b73dbf8930d",
     "templatedir": "extension",
