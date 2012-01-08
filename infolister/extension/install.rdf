@@ -1,10 +1,7 @@
-<?xml version="1.0"?>
-
-<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+<?xml version="1.0" encoding="utf-8"?><RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
   <Description about="urn:mozilla:install-manifest">
     <em:id>{3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8}</em:id>
-    <em:version>0.10.4a2</em:version> <!-- FIXME: address fixme markers before releasing -->
+    <em:version>0.10.4a3</em:version> <!-- FIXME: address fixme markers before releasing -->
     <em:type>2</em:type>
     <em:bootstrap>false</em:bootstrap>
     <em:unpack>true</em:unpack>
@@ -42,12 +39,12 @@
     <!-- Front End MetaData -->
     <em:name>InfoLister</em:name>
     <em:description>Lists installed extensions and themes</em:description>
-    <em:creator>Nickolay Ponomarev</em:creator>
+    <em:creator>Nickolay Ponomarev (asqueella@gmail.com)</em:creator>
     <em:iconURL>chrome://infolister/skin/icon32x32.png</em:iconURL>
     <em:homepageURL>http://mozilla.doslash.org/infolister</em:homepageURL>
     <em:optionsURL>chrome://infolister/content/prefs/prefs.xul</em:optionsURL>
     <em:updateKey>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCvvgHYV9Gc8vNSQAuDx7McP5A93skdsACyn0H8j9wAt1sS98/6Vu3uN5FGQYh52v963Fc8l5X2Yx2QXCU/eJ5yabrWQ6pJCSHCoZfXveHVH7YTbO7kkK9K2YqzxEkEAjkks3LHuoo55RecBd11JBHAvfhiPomHrk9YCCGAGk3ifwIDAQAB</em:updateKey>
-    <em:updateURL></em:updateURL>
+    <em:updateURL>http://mozilla.doslash.org/infolister/update_dev.rdf</em:updateURL>
 
     <!-- chronological order, translators after contributors -->
     <em:contributor>Torisugari</em:contributor>

@@ -2,28 +2,29 @@
 <RDF:RDF xmlns:em="http://www.mozilla.org/2004/em-rdf#"
          xmlns:NC="http://home.netscape.com/NC-rdf#"
          xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-  <RDF:Description RDF:about="urn:mozilla:extension:{3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8}:0.10.4a2"
-                   em:version="0.10.4a2"
-                   em:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBABR+/EJs4cdFU4t0QylfyM05Af0GJpEaCE3A4QFb1Bgc0rSUbycVuUD/llwrRBeWZTa1lepYNIUjZJ8Rp/I7ZoSBZBapqL2VlFn/KL/Jt2cBheChxdEuNt4t9F5ewctPooY1KA/R2wO8jUltn4oE2sBD3mVfLTXOfbaK2q7ZHxp1">
-    <em:targetApplication RDF:resource="rdf:#$FhTg13"/>
-    <em:targetApplication RDF:resource="rdf:#$LhTg13"/>
-  </RDF:Description>
-  <RDF:Description RDF:about="urn:mozilla:extension:{3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8}"
-                   em:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAJBY1xq45nIs7r3WxgixazzvTobpOSXdBqZZMyg6clXVJl0X8oOQs2cWRMNzcYKPzZcfFdhgY2GceWkrIEE4kVB/E3bktC0QFzPkPuMsRtTZ0VsHbK9NASYOHsWMa2ER55nlT3aCkhhXdRu80QaHyDlDhHVhgpwb31bQFIKwjsfO">
-    <em:updates RDF:resource="rdf:#$ChTg13"/>
-  </RDF:Description>
+  <RDF:Seq RDF:about="rdf:#$ChTg13">
+    <RDF:li RDF:resource="urn:mozilla:extension:{3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8}:0.10.4a3"/>
+  </RDF:Seq>
   <RDF:Description RDF:about="rdf:#$LhTg13"
                    em:id="{3550f703-e582-4d05-9a08-453d09bdfdc6}"
                    em:minVersion="3.1.*"
                    em:maxVersion="6.0.*"
-                   em:updateLink="http://mozilla.doslash.org/infolister/infolister-0.10.4a2.xpi" />
+                   em:updateLink="http://mozilla.doslash.org/infolister/infolister-0.10.4a3.xpi"
+                   em:updateHash="sha1:0e351d87b9544faec7f3d31788bc6ea0ac06df8b" />
   <RDF:Description RDF:about="rdf:#$FhTg13"
                    em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
                    em:minVersion="3.6"
-                   em:maxVersion="8.0a1"
-                   em:updateLink="http://mozilla.doslash.org/infolister/infolister-0.10.4a2.xpi"
-                   em:updateHash="sha1:ef74c333749937b40e7a15dde0a04af3585dd502" />
-  <RDF:Seq RDF:about="rdf:#$ChTg13">
-    <RDF:li RDF:resource="urn:mozilla:extension:{3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8}:0.10.4a2"/>
-  </RDF:Seq>
+                   em:maxVersion="12.0a1"
+                   em:updateLink="http://mozilla.doslash.org/infolister/infolister-0.10.4a3.xpi"
+                   em:updateHash="sha1:0e351d87b9544faec7f3d31788bc6ea0ac06df8b" />
+  <RDF:Description RDF:about="urn:mozilla:extension:{3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8}"
+                   em:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAAu9f2UjZoScY4EJ8LV5p/oWwpYYSii+gwNz1ap+jczjcPRWejCG6tJSqwHvMYE3sytlleF+M+Gmk0AcN9VuLSj59j9nAbKkEa+WmHkU8xnQPIxWHeKT6egskQSrzDP8N3Qo2+sNDpGInexol3CY2lAXjPv7yINJmrkes7W1Xf1L">
+    <em:updates RDF:resource="rdf:#$ChTg13"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mozilla:extension:{3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8}:0.10.4a3"
+                   em:version="0.10.4a3"
+                   em:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBADvIAwUIxv1cCH0r4stc9Ui4Eaiuc5gfXgJm2fir1KxsL6MgF1aOsoeXU6/pMs/NXTFHflxMFsxigvnlCpvQwOUsfVhOMZ7nBxFatvgzBqLkiIKv2UcBuMmS2sSOdrK3yWYkXqOd48YD2Ke5G/znx0Z6FbV4sQIWL7GBDZ71Ims8">
+    <em:targetApplication RDF:resource="rdf:#$FhTg13"/>
+    <em:targetApplication RDF:resource="rdf:#$LhTg13"/>
+  </RDF:Description>
 </RDF:RDF>
