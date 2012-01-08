@@ -1,5 +1,12 @@
 InfoLister changelog.
 
+0.10.4a3 [2012-01-09]
+- small fix for Firefox 10 compatibility
+<http://code.google.com/p/infolister/issues/detail?id=17>
+- updated Addon SDK source to its tip as of 2011-09-11
+- added custom update manifest, since I don't release at addons.mozilla.org at
+the time
+
 0.10.4a2 [2011-07-25]
 - Mark as compatible with SeaMonkey 2.4a1 (per Philip Chee)
 - Small bugfixes for the infolister button <http://code.google.com/p/infolister/source/detail?r=f9b2787ba5>
