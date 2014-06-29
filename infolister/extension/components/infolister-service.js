@@ -268,7 +268,7 @@ InfoListerServiceImpl.prototype = {
                 if(progressDialog && !progressDialog.closed)
                   progressDialog.close();
                 if(aCallback instanceof Function)
-                  aCallback();
+                  loadJetpackModule("timer").setTimeout(aCallback, 0);
               }
             );
           },
