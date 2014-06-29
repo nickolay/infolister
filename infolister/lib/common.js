@@ -146,7 +146,7 @@ var ILHelpers = {
   }, 
   get appName() { // return string
     var appName = this.hostApp;
-    for(i in this.AppGuids)
+    for(var i in this.AppGuids)
       if(appName == this.AppGuids[i])
         return i;
     return "";
