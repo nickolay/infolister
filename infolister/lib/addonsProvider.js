@@ -194,7 +194,12 @@ var gAddonsProvider = {
     if (!oldEM) { // Mozilla 2+
       // Have to do this to gain access to AddonInternal from XPIProvider,
       // which has the updateURL property.
-      var xp = components.utils.import("resource://gre/modules/XPIProvider.jsm");
+      var xp;
+      try {
+        xp = components.utils.import("resource://gre/modules/addons/XPIProvider.jsm");
+      } catch (e) {
+        xp = components.utils.import("resource://gre/modules/XPIProvider.jsm");
+      }
       function InfoLister_createWrapper(addonInternal) {
         var wrapper = arguments.callee.originalFn.call(xp, addonInternal);
         wrapper._infoListerInternal = addonInternal;
