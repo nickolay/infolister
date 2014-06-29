@@ -479,7 +479,7 @@ function buildForsakenConsoleDump(dump) {
         cService.logMessage(err);
       }
       else
-        cService.logStringMessage(str);
+        ;//cService.logStringMessage(str);
       buffer = "";
     } else {
       buffer += msg;
