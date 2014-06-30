@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?><RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
   <Description about="urn:mozilla:install-manifest">
     <em:id>{3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8}</em:id>
-    <em:version>0.10.4a3</em:version> <!-- FIXME: address fixme markers before releasing -->
+    <em:version>0.10.4a4</em:version> <!-- FIXME: address fixme markers before releasing -->
     <em:type>2</em:type>
     <em:bootstrap>false</em:bootstrap>
     <em:unpack>true</em:unpack>
@@ -14,7 +14,7 @@
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
         <em:minVersion>3.6</em:minVersion>
-        <em:maxVersion>8.0a1</em:maxVersion>
+        <em:maxVersion>33.0a1</em:maxVersion>
       </Description>
     </em:targetApplication>
 
