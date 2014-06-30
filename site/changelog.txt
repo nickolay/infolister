@@ -1,5 +1,8 @@
 InfoLister changelog.
 
+0.10.4a4 [2014-06-30]
+- fixes for Firefox 30 compatibility
+
 0.10.4a3 [2012-01-09]
 - small fix for Firefox 10 compatibility
 <http://code.google.com/p/infolister/issues/detail?id=17>

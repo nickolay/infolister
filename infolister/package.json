@@ -1,7 +1,7 @@
 {
     "name": "infolister",
     "fullName": "InfoLister",
-    "version": "0.10.4a3", 
+    "version": "0.10.4a4", 
     "license": "MPL/GPL/LGPL", 
     "author": "Nickolay Ponomarev (asqueella@gmail.com)",
 "X-NOTE": "must match the contractID in chrome.manifest",
