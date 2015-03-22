@@ -740,10 +740,11 @@ var objects = [InfoListerServiceImpl, UploadJob, AboutInfo];
  */
 
 const CI = Components.interfaces, CC = Components.classes, CR = Components.results;
+var NSGetFactory;
 
 Components.utils.import("resource://gre/modules/XPCOMUtils.jsm");
 if ("generateNSGetFactory" in XPCOMUtils) { // Gecko 2
-  const NSGetFactory = XPCOMUtils.generateNSGetFactory(objects);
+  NSGetFactory = XPCOMUtils.generateNSGetFactory(objects);
 }
 
 function NSGetModule(compMgr, fileSpec) { // Gecko 1.9.2
