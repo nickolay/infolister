@@ -1,0 +1,367 @@
+{
+ "bootstrap": {
+  "classID": "{cbae6be2-c1e8-4c42-9f8b-9b73dbf8930d}", 
+  "contractID": "@mozilla.org/harness-service;1?id={3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8}"
+ }, 
+ "bundleID": "{3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8}", 
+ "enable_e10s": false, 
+ "jetpackID": "{3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8}", 
+ "loader": "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib/cuddlefish.js", 
+ "main": "main", 
+ "manifest": {
+  "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib/api-utils.js": {
+   "docsSHA256": "fa352eb05c24310ca9deb2bb47b3b5e28d2c332a47c5e9c306d80dc82a6f3470", 
+   "jsSHA256": "7a8561e45a0e24b4d5d8af84cd76a55b6c1af98862cf5274e43497e1de265b25", 
+   "moduleName": "api-utils", 
+   "packageName": "api-utils", 
+   "requirements": {}, 
+   "sectionName": "lib"
+  }, 
+  "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib/byte-streams.js": {
+   "docsSHA256": "6e5082ee5e082522084a571f94024458e8567d184aefd1ae799a64f7e849d247", 
+   "jsSHA256": "ea2a3b4658cf794ea328bc10a3f5f5fcc183b44512b9b3bf6592afb22cca2ffd", 
+   "moduleName": "byte-streams", 
+   "packageName": "api-utils", 
+   "requirements": {
+    "./unload": {
+     "uri": "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib/unload.js"
+    }, 
+    "chrome": {}
+   }, 
+   "sectionName": "lib"
+  }, 
+  "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib/cuddlefish.js": {
+   "docsSHA256": null, 
+   "jsSHA256": "e92596aaec7210cda4c90f952f47f8a01f84c689df2ca6cf0139a89ea0d4e7ed", 
+   "moduleName": "cuddlefish", 
+   "packageName": "api-utils", 
+   "requirements": {
+    "api-utils/memory": {
+     "uri": "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib/memory.js"
+    }, 
+    "api-utils/plain-text-console": {
+     "uri": "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib/plain-text-console.js"
+    }, 
+    "api-utils/securable-module": {
+     "uri": "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib/securable-module.js"
+    }, 
+    "api-utils/shims": {
+     "uri": "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib/shims.js"
+    }, 
+    "api-utils/unload": {
+     "uri": "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib/unload.js"
+    }
+   }, 
+   "sectionName": "lib"
+  }, 
+  "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib/file.js": {
+   "docsSHA256": "d5eda6de6b4632de04d0f95e4380f66b5878ae2bf7c4ea3aeda04ce2c283b381", 
+   "jsSHA256": "d5acf1eb63ca398b5780512dc5cb265d89ce9dc9c0357571aa411722b5815fd3", 
+   "moduleName": "file", 
+   "packageName": "api-utils", 
+   "requirements": {
+    "./byte-streams": {
+     "uri": "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib/byte-streams.js"
+    }, 
+    "./text-streams": {
+     "uri": "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib/text-streams.js"
+    }, 
+    "chrome": {}
+   }, 
+   "sectionName": "lib"
+  }, 
+  "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib/memory.js": {
+   "docsSHA256": "3550f59ba586f4809db1e04a6d98710aa4ca7350013afd09fd218045b7e4169a", 
+   "jsSHA256": "2f925e73afd8aa0a36ac8d4196a9ab2dd6373807e420d7855d48f196e4694675", 
+   "moduleName": "memory", 
+   "packageName": "api-utils", 
+   "requirements": {
+    "./unload": {
+     "uri": "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib/unload.js"
+    }, 
+    "chrome": {}
+   }, 
+   "sectionName": "lib"
+  }, 
+  "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib/plain-text-console.js": {
+   "docsSHA256": "a3015c290b88dfb4078d8ad178342d787d55e8945f2c6d4ea7b7761c0a443506", 
+   "jsSHA256": "e6056d23fca6c898f64b1aa2b15b6bc72f7627d2dff18184b9bf72345cf9f90f", 
+   "moduleName": "plain-text-console", 
+   "packageName": "api-utils", 
+   "requirements": {
+    "./traceback": {
+     "uri": "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib/traceback.js"
+    }, 
+    "chrome": {}
+   }, 
+   "sectionName": "lib"
+  }, 
+  "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib/securable-module.js": {
+   "docsSHA256": "12ef327b1e8081c7c8e1107daa4e48f5985746210048cc2fffd5d6ad1231b505", 
+   "jsSHA256": "ffdeb3d2e4c695d385d8dc2258357252c0e53a1fdb76b9dee9cfda2a828222c3", 
+   "moduleName": "securable-module", 
+   "packageName": "api-utils", 
+   "requirements": {
+    "./self-maker": {
+     "uri": "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib/self-maker.js"
+    }
+   }, 
+   "sectionName": "lib"
+  }, 
+  "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib/self-maker.js": {
+   "docsSHA256": null, 
+   "jsSHA256": "edaa7d4e21c6290720e56a5c08550947c3975dbdcbb03903584c2b05b808f853", 
+   "moduleName": "self-maker", 
+   "packageName": "api-utils", 
+   "requirements": {
+    "./file": {
+     "uri": "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib/file.js"
+    }, 
+    "./url": {
+     "uri": "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib/url.js"
+    }
+   }, 
+   "sectionName": "lib"
+  }, 
+  "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib/shims.js": {
+   "docsSHA256": null, 
+   "jsSHA256": "6388c10303d528bdb5d7e53b3fe820cf0003363f9cd3765cc0f3f3632a829b2a", 
+   "moduleName": "shims", 
+   "packageName": "api-utils", 
+   "requirements": {}, 
+   "sectionName": "lib"
+  }, 
+  "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib/text-streams.js": {
+   "docsSHA256": "6ff7a7cfb1cb4c6a7d436961c6bae2813202a9475ffa864ce5b598afb21e94a8", 
+   "jsSHA256": "73d2de1a8e30c2ea49daa91f0db737dd94eae29a3e3299183dfc1d61985fae06", 
+   "moduleName": "text-streams", 
+   "packageName": "api-utils", 
+   "requirements": {
+    "./unload": {
+     "uri": "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib/unload.js"
+    }, 
+    "chrome": {}
+   }, 
+   "sectionName": "lib"
+  }, 
+  "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib/traceback.js": {
+   "docsSHA256": "1cb67ef04704ed75b389f3b2f36987b8781abc8bb4a05b25027849cf2fc227f3", 
+   "jsSHA256": "001d7b5ae6590b925d9bb8ed443f443202996e6e63c140f7e9ffe8176b0bd994", 
+   "moduleName": "traceback", 
+   "packageName": "api-utils", 
+   "requirements": {
+    "./url": {
+     "uri": "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib/url.js"
+    }, 
+    "chrome": {}
+   }, 
+   "sectionName": "lib"
+  }, 
+  "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib/unload.js": {
+   "docsSHA256": "6e355161b7c2c50809f754d97c6dd39d36029f907cef7415c89902b9f901c071", 
+   "jsSHA256": "d5f698c31088fc56efa27b829af95b5e389fd0f3f0c781b102191f55b74244ab", 
+   "moduleName": "unload", 
+   "packageName": "api-utils", 
+   "requirements": {}, 
+   "sectionName": "lib"
+  }, 
+  "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib/url.js": {
+   "docsSHA256": "487c111b88beb853c2379741eb7dbc800eaf6d69809d374f856319edbcbb84b9", 
+   "jsSHA256": "730d046aec76dbac526c4193b369ef7497c4a7d1304e11ab022ed606ad79ac4a", 
+   "moduleName": "url", 
+   "packageName": "api-utils", 
+   "requirements": {
+    "./api-utils": {
+     "uri": "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib/api-utils.js"
+    }, 
+    "chrome": {}
+   }, 
+   "sectionName": "lib"
+  }, 
+  "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-infolister-lib/addonsProvider.js": {
+   "docsSHA256": null, 
+   "jsSHA256": "20a852709c73814fc930c2d0efd5c6de066520265f45670f2f601dd187c4a88d", 
+   "moduleName": "addonsProvider", 
+   "packageName": "infolister", 
+   "requirements": {
+    "chrome": {}, 
+    "common": {
+     "uri": "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-infolister-lib/common.js"
+    }
+   }, 
+   "sectionName": "lib"
+  }, 
+  "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-infolister-lib/collect.js": {
+   "docsSHA256": null, 
+   "jsSHA256": "2d0cb1ce262b09d05b9d28a87db9a51fb26e5b8600e489337fd270db6ae1f6c9", 
+   "moduleName": "collect", 
+   "packageName": "infolister", 
+   "requirements": {
+    "addonsProvider": {
+     "uri": "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-infolister-lib/addonsProvider.js"
+    }, 
+    "chrome": {}, 
+    "common": {
+     "uri": "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-infolister-lib/common.js"
+    }
+   }, 
+   "sectionName": "lib"
+  }, 
+  "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-infolister-lib/common.js": {
+   "docsSHA256": null, 
+   "jsSHA256": "634a67eee4e4ba3a4b47a17d5a8492b2abe182520abd97e03b566df952dccac0", 
+   "moduleName": "common", 
+   "packageName": "infolister", 
+   "requirements": {
+    "chrome": {}
+   }, 
+   "sectionName": "lib"
+  }, 
+  "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-infolister-lib/format.js": {
+   "docsSHA256": null, 
+   "jsSHA256": "ab4438f1bf0dd0826ac32e6296656bce4c2eb2704c8d15a5324396c6860b772a", 
+   "moduleName": "format", 
+   "packageName": "infolister", 
+   "requirements": {
+    "chrome": {}, 
+    "common": {
+     "uri": "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-infolister-lib/common.js"
+    }
+   }, 
+   "sectionName": "lib"
+  }, 
+  "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-infolister-lib/main.js": {
+   "docsSHA256": null, 
+   "jsSHA256": "c1b8b9da5b2fb495ea326602c80062e439336215fe0d66dd455066895f53b13c", 
+   "moduleName": "main", 
+   "packageName": "infolister", 
+   "requirements": {
+    "addonsProvider": {
+     "uri": "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-infolister-lib/addonsProvider.js"
+    }, 
+    "collect": {
+     "uri": "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-infolister-lib/collect.js"
+    }, 
+    "common": {
+     "uri": "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-infolister-lib/common.js"
+    }, 
+    "format": {
+     "uri": "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-infolister-lib/format.js"
+    }
+   }, 
+   "sectionName": "lib"
+  }
+ }, 
+ "metadata": {
+  "addon-kit": {
+   "author": "Atul Varma (http://toolness.com/) <atul@mozilla.com>", 
+   "contributors": [
+    "Myk Melez (http://melez.com/) <myk@mozilla.org>", 
+    "Daniel Aquino <mr.danielaquino@gmail.com>"
+   ], 
+   "description": "Add-on development made easy.", 
+   "keywords": [
+    "javascript", 
+    "engine", 
+    "platform", 
+    "xulrunner"
+   ], 
+   "license": "MPL 1.1/GPL 2.0/LGPL 2.1", 
+   "name": "addon-kit", 
+   "version": "1.0b6pre"
+  }, 
+  "api-utils": {
+   "author": "Atul Varma (http://toolness.com/) <atul@mozilla.com>", 
+   "contributors": [
+    "Myk Melez (http://melez.com/) <myk@mozilla.org>", 
+    "Daniel Aquino <mr.danielaquino@gmail.com>"
+   ], 
+   "description": "Foundational infrastructure and utilities.", 
+   "keywords": [
+    "javascript", 
+    "engine", 
+    "platform", 
+    "xulrunner", 
+    "jetpack-low-level"
+   ], 
+   "license": "MPL 1.1/GPL 2.0/LGPL 2.1", 
+   "name": "api-utils", 
+   "version": "1.0b6pre"
+  }, 
+  "infolister": {
+   "author": "Nickolay Ponomarev (asqueella@gmail.com)", 
+   "contributors": [
+    "Torisugari", 
+    "Ralf Hasse (icons)", 
+    "Rowne Mastaile", 
+    "Robert Strong", 
+    ">zeniko", 
+    "Dr. Evil", 
+    "Robert Brand (Sunbird support)", 
+    "Philip Chee (SeaMonkey support)", 
+    "Alf (Dutch)", 
+    "SlovakSoft (Slovak)", 
+    "Wronschien (French)", 
+    "Unghost (Russian)", 
+    "Leszek(teo)Zyczkowski (Polish)", 
+    "Haebaru (Japanese)", 
+    "Mikael Hiort af Ornas (Swedish)"
+   ], 
+   "description": "Lists installed extensions and themes", 
+   "homepage": "http://mozilla.doslash.org/infolister", 
+   "license": "MPL/GPL/LGPL", 
+   "main": "main", 
+   "name": "infolister", 
+   "version": "0.10.4a4"
+  }
+ }, 
+ "name": "infolister", 
+ "packageData": {
+  "addon-kit": "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-addon-kit-data/", 
+  "api-utils": "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-data/"
+ }, 
+ "resourcePackages": {
+  "3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-addon-kit-data": "addon-kit", 
+  "3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-addon-kit-lib": "addon-kit", 
+  "3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-data": "api-utils", 
+  "3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib": "api-utils", 
+  "3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-infolister-lib": "infolister", 
+  "3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-infolister-tests": "infolister"
+ }, 
+ "resources": {
+  "3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-addon-kit-data": [
+   "resources", 
+   "3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-addon-kit-data"
+  ], 
+  "3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-addon-kit-lib": [
+   "resources", 
+   "3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-addon-kit-lib"
+  ], 
+  "3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-data": [
+   "resources", 
+   "3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-data"
+  ], 
+  "3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib": [
+   "resources", 
+   "3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib"
+  ], 
+  "3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-infolister-lib": [
+   "resources", 
+   "3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-infolister-lib"
+  ], 
+  "3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-infolister-tests": [
+   "resources", 
+   "3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-infolister-tests"
+  ]
+ }, 
+ "rootPaths": [
+  "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-addon-kit-lib/", 
+  "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-infolister-lib/", 
+  "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-api-utils-lib/", 
+  "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-infolister-tests/"
+ ], 
+ "sdkVersion": "1.0b6pre", 
+ "staticArgs": {}, 
+ "uriPrefix": "resource://3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-", 
+ "verbose": false
+}
