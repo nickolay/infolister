@@ -1,0 +1,1 @@
+See http://mozilla.doslash.org/infolister/
