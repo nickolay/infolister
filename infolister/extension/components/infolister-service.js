@@ -29,21 +29,9 @@ function requires(aScript) {
     .loadSubScript("chrome://infolister/content/" + aScript);
 }
 
-function loadJetpackModule(module) {
+function loadILModule(module) {
   Components.utils.import("resource://infolister/" + module + ".js", globalObject);
   return globalObject[module];
-
-  // NOTE: must match the value in package.json and chrome.manifest
-  var harnessContractID =
-    "@mozilla.org/harness-service;1?id={3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8}";
-
-  try {
-    return Components.classes[harnessContractID].
-      getService().wrappedJSObject.loader.require(module);
-  } catch(e) {
-    dump("InfoLister error while loading module '" + module + "': " + e + "\n");
-    Components.reportError(e);
-  }
 }
 
 /**
@@ -104,7 +92,6 @@ function InfoListerServiceImpl() {
   try {
     this.wrappedJSObject = this;
     this.prefObserver = prefObserver; // make prefObserver available to infolister.js (lazyness)
-    this.loadJetpackModule = loadJetpackModule;
     
     if ("@mozilla.org/login-manager;1" in Components.classes) {
       requires("loginmanager/utils.js");
@@ -128,7 +115,7 @@ InfoListerServiceImpl.prototype = {
   _formatter: null,
   get formatter() {
     if(!this._formatter) {
-      this._formatter = loadJetpackModule("format").gFormatter;
+      this._formatter = loadILModule("format").gFormatter;
     }
     return this._formatter;
   },
@@ -140,7 +127,7 @@ InfoListerServiceImpl.prototype = {
   /** Returns the XML tree with collected information */
   getDataAsXML: function(haveXMLDataCallback) {
     requires("hash.js");
-    var collect = loadJetpackModule("collect");
+    var collect = loadILModule("collect");
 
     prefObserver.register();   // listen for pref changes
 
@@ -271,7 +258,7 @@ InfoListerServiceImpl.prototype = {
                 if(progressDialog && !progressDialog.closed)
                   progressDialog.close();
                 if(aCallback instanceof Function) {
-                  //loadJetpackModule("timer").setTimeout(aCallback, 0);
+                  //require("timer").setTimeout(aCallback, 0);
                   globalObject.tmpTimer = ILHelpers.createInstance("timer;1", "nsITimer");
                   globalObject.tmpTimerCallback = {observe: function() {
                     delete globalObject.tmpTimer;
