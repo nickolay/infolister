@@ -6,10 +6,12 @@
  * See the license.txt included in this package for licensing information.
  */
 
-var ILPrefs = require("common").ILPrefs;
-var ILHelpers = require("common").ILHelpers;
-var InfoListerWindows = require("common").InfoListerWindows;
-const {components} = require("chrome");
+var EXPORTED_SYMBOLS = ["format"];
+var format = {};
+var exports = format;
+
+Components.utils.import("resource://infolister/common.js", this); /* ILPrefs, ILHelpers, InfoListerWindows */
+const components = Components;
 
 var gHash;
 

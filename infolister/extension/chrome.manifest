@@ -12,6 +12,8 @@ contract @mozilla.org/network/protocol/about;1?what=info {2ee2ad53-be3a-2b41-7a7
 component {55b75ad5-a6dd-445e-91a0-4ef9a6c24cfe} components/infolister-service.js
 contract @mozilla.doslash.org/infolister/uploadjob;1 {55b75ad5-a6dd-445e-91a0-4ef9a6c24cfe}
 
+resource infolister resources/3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8-infolister-lib/
+
 content	infolister	content/
 
 # Firefox

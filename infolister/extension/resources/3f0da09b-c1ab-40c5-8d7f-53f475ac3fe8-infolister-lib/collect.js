@@ -6,14 +6,17 @@
  * See the license.txt included in this package for licensing information.
  */
 
+var EXPORTED_SYMBOLS = ["collect"];
+var collect = {};
+var exports = collect;
+
+Components.utils.import("resource://infolister/common.js", this); /* InfoListerWindows, ILHelpers, ILPrefs */
+Components.utils.import("resource://infolister/addonsProvider.js", this); /* addonsProvider */
+const Cc = Components.classes, Ci = Components.interfaces, components = Components;
+
 var doc;      // the XML document where we collect information
 var infoElt;  // The root <info> element for current application
 
-var InfoListerWindows = require("common").InfoListerWindows;
-var ILHelpers = require("common").ILHelpers;
-var ILPrefs = require("common").ILPrefs;
-var addonsProvider = require("addonsProvider");
-const {components, Cc, Ci} = require("chrome");
 
 // The only public method: collectData()
 // Collects data, return an XML document

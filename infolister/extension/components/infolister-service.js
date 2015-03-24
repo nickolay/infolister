@@ -30,6 +30,9 @@ function requires(aScript) {
 }
 
 function loadJetpackModule(module) {
+  Components.utils.import("resource://infolister/" + module + ".js", globalObject);
+  return globalObject[module];
+
   // NOTE: must match the value in package.json and chrome.manifest
   var harnessContractID =
     "@mozilla.org/harness-service;1?id={3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8}";
@@ -267,8 +270,15 @@ InfoListerServiceImpl.prototype = {
               function() {
                 if(progressDialog && !progressDialog.closed)
                   progressDialog.close();
-                if(aCallback instanceof Function)
-                  loadJetpackModule("timer").setTimeout(aCallback, 0);
+                if(aCallback instanceof Function) {
+                  //loadJetpackModule("timer").setTimeout(aCallback, 0);
+                  globalObject.tmpTimer = ILHelpers.createInstance("timer;1", "nsITimer");
+                  globalObject.tmpTimerCallback = {observe: function() {
+                    delete globalObject.tmpTimer;
+                    aCallback();
+                  }};
+                  globalObject.tmpTimer.init(globalObject.tmpTimerCallback, 0, CI.nsITimer.TYPE_ONE_SHOT);
+                }
               }
             );
           },
@@ -751,7 +761,13 @@ function NSGetModule(compMgr, fileSpec) { // Gecko 1.9.2
   return XPCOMUtils.generateModule(objects);
 }
 
-XPCOMUtils.defineLazyGetter(this, "commonModule", function() loadJetpackModule("common"));
+XPCOMUtils.defineLazyGetter(this, "commonModule", function() {
+  // replace the globalObject.commonModule with the object
+  // containing EXPORTED_SYMBOLS from common.js
+  let commonModule = {};
+  Components.utils.import("resource://infolister/common.js", commonModule);
+  return globalObject.commonModule = commonModule;
+});
 XPCOMUtils.defineLazyGetter(this, "InfoListerWindows", function() commonModule.InfoListerWindows);
 XPCOMUtils.defineLazyGetter(this, "ILHelpers", function() commonModule.ILHelpers);
 XPCOMUtils.defineLazyGetter(this, "ILPrefs", function() commonModule.ILPrefs);

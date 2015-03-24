@@ -7,7 +7,12 @@
  * Copyright (c) 2004-2005, Nickolay Ponomarev.
  * See the license.txt included in this package for more information.
  */
-const {Cc, Ci, components} = require("chrome");
+
+var EXPORTED_SYMBOLS = ["InfoListerWindows", "ILHelpers", "ILPrefs"];
+var exports = {};
+
+const Cc = Components.classes, Ci = Components.interfaces, components = Components;
+
 var InfoListerWindows = {
   // windows we work with
   Info: 0, Prefs: 1, Browser: 2, Mail: 3, Calendar: 4, Any: 5,
@@ -197,7 +202,3 @@ IL_Loader.loadSubScript("chrome://infolister/content/utils/prefutils.js",
 IL_Loader = undefined; // ?
 
 var ILPrefs = new PrefsWrapper1("extensions.infolister.");
-
-exports.ILHelpers = ILHelpers;
-exports.ILPrefs = ILPrefs;
-exports.InfoListerWindows = InfoListerWindows;

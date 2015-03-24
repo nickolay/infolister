@@ -7,9 +7,12 @@
  * See the license.txt included in this package for licensing information.
  */
 
-var ILHelpers = require("common").ILHelpers;
-var ILPrefs = require("common").ILPrefs;
-const {components} = require("chrome");
+var addonsProvider = {};
+var exports = addonsProvider;
+var EXPORTED_SYMBOLS = ["addonsProvider"];
+
+Components.utils.import("resource://infolister/common.js", this); /* ILHelpers, ILPrefs */
+const components = Components;
 
 // Gecko 1.9.2?
 const oldEM = ("@mozilla.org/extensions/manager;1" in components.classes);
