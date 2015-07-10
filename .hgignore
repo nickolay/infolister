@@ -1,5 +1,0 @@
-syntax: regexp
-^profile
-^infolister\.komodoproject$
-^addon-sdk
-^infolister/packages/jetpack-httpd
