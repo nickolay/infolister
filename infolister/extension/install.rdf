@@ -40,10 +40,8 @@
     <em:description>Lists installed extensions and themes</em:description>
     <em:creator>Nickolay Ponomarev (asqueella@gmail.com)</em:creator>
     <em:iconURL>chrome://infolister/skin/icon32x32.png</em:iconURL>
-    <em:homepageURL>http://mozilla.doslash.org/infolister</em:homepageURL>
+    <em:homepageURL>http://nickolay.github.io/infolister/</em:homepageURL>
     <em:optionsURL>chrome://infolister/content/prefs/prefs.xul</em:optionsURL>
-    <!--em:updateKey>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCvvgHYV9Gc8vNSQAuDx7McP5A93skdsACyn0H8j9wAt1sS98/6Vu3uN5FGQYh52v963Fc8l5X2Yx2QXCU/eJ5yabrWQ6pJCSHCoZfXveHVH7YTbO7kkK9K2YqzxEkEAjkks3LHuoo55RecBd11JBHAvfhiPomHrk9YCCGAGk3ifwIDAQAB</em:updateKey>
-    <em:updateURL>http://mozilla.doslash.org/infolister/update_dev.rdf</em:updateURL-->
 
     <!-- chronological order, translators after contributors -->
     <em:contributor>Torisugari</em:contributor>

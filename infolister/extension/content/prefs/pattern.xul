@@ -65,30 +65,30 @@
             <deck id="contextDeck0"> <!-- XXX align the labels vertically -->
               <spacer/>
               <label value="&template.label;" class="text-link"
-                     href="http://mozilla.doslash.org/infolister/templates" />
-              <label value="&stylesheet.label;" 
+                     href="http://nickolay.github.io/infolister/templates/" />
+              <label value="&stylesheet.label;"
                      accesskey="&stylesheet.accesskey;" control="XSLT.file"/>
               <spacer/>
             </deck>
             <deck id="contextDeck1">
               <spacer/>
               <hbox align="center">
-                <textbox id="custom-template" flex="1" readonly="true" 
-                         preference="pref_template.custom" 
+                <textbox id="custom-template" flex="1" readonly="true"
+                         preference="pref_template.custom"
                          onsyncfrompreference="var f=getPref('template.custom'); return f?f.path:null;"/>
               </hbox>
               <hbox align="center">
                 <textbox id="XSLT.file" flex="1" preference="pref_XSLT.file"/>
               </hbox>
               <hbox pack="end">
-                <!--button label="&reloadXPILinks.label;" 
-                        accesskey="&reloadXPILinks.accesskey;" 
+                <!--button label="&reloadXPILinks.label;"
+                        accesskey="&reloadXPILinks.accesskey;"
                         oncommand="reloadXPILinks();"/-->
               </hbox>
             </deck>
             <deck id="contextDeck2">
               <spacer/>
-              <button label="&browse.label;" accesskey="&browse.accesskey;" 
+              <button label="&browse.label;" accesskey="&browse.accesskey;"
                       oncommand="pickFile('template.custom', true);"/>
               <spacer/>
               <spacer/>
