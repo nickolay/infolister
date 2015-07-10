@@ -1,9 +1,0 @@
-<!ENTITY title "InfoLister">
-
-<!ENTITY desc "Qui sono presenti le informazioni su Firefox, che si possono personalizzare facendo clic sul pulsante &quot;Opzioni&quot;.">
-<!ENTITY hint.about.info "Si possono inoltre visualizzare queste informazioni direttamente nel browser scrivendo &quot;about:info&quot; (senza virgolette) nella barra degli indirizzi.">
-
-<!ENTITY save "Salva...">
-<!ENTITY upload "Carica">
-<!ENTITY prefs "Opzioni...">
-<!ENTITY close "Chiudi">

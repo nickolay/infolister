@@ -1,8 +1,0 @@
-<!ENTITY title "InfoLister opties">
-<!ENTITY prefwindow.style "width: 40em;">
-<!ENTITY prefwindow.fixedheight "28em">
-<!ENTITY apply "Toevoegen">
-<!ENTITY apply.accesskey "T">
-<!ENTITY general_tab "Algemeen">
-<!ENTITY pattern_tab "Aangepaste uitvoer">
-<!ENTITY upload_tab "Uploaden">

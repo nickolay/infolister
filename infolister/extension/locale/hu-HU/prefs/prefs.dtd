@@ -1,8 +1,0 @@
-<!ENTITY title "InfoLister beállítások">
-<!ENTITY prefwindow.style "width: 50em;">
-<!ENTITY prefwindow.fixedheight "30em">
-<!ENTITY apply "Alkalmaz">
-<!ENTITY apply.accesskey "A">
-<!ENTITY general_tab "Általános">
-<!ENTITY pattern_tab "Fájl típus">
-<!ENTITY upload_tab "Feltöltés">

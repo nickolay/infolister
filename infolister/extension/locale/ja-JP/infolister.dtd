@@ -1,7 +1,0 @@
-<!ENTITY title "InfoLister">
-<!ENTITY desc "これはアプリケーションの情報です。下のオプションボタンをクリックするとカスタマイズできます。">
-<!ENTITY hint.about.info "この情報はロケーションバーに &apos;about:info&apos;(引用符無し)と入力してブラウザで直接見ることもできます。">
-<!ENTITY save "保存">
-<!ENTITY upload "アップロード">
-<!ENTITY prefs "オプション">
-<!ENTITY close "閉じる">

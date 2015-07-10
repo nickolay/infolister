@@ -1,7 +1,0 @@
-<!ENTITY title "InfoLister">
-<!ENTITY desc "Toto sú informácie o vašej aplikácii. Môžete si ich prispôsobiť kliknutím na tlačidlo Možnosti.">
-<!ENTITY hint.about.info "Tieto informácie si môžete pozrieť aj priamo v prehliadači zadaním &quot;about:info&quot; (bez úvodzoviek) do Panela s adresou.">
-<!ENTITY save "Uložiť...">
-<!ENTITY upload "Odovzdať">
-<!ENTITY prefs "Možnosti...">
-<!ENTITY close "Zavrieť">

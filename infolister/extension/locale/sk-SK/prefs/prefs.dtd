@@ -1,8 +1,0 @@
-<!ENTITY title "InfoLister - Možnosti">
-<!ENTITY prefwindow.style "width: 40em;">
-<!ENTITY prefwindow.fixedheight "28em">
-<!ENTITY apply "Použiť">
-<!ENTITY apply.accesskey "P">
-<!ENTITY general_tab "Všeobecné">
-<!ENTITY pattern_tab "Prispôsobiť výstup">
-<!ENTITY upload_tab "Odovzdávanie">

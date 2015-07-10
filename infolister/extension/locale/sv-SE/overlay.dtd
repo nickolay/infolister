@@ -1,7 +1,0 @@
-<!ENTITY brandname.label "InfoLister">
-<!ENTITY brandname.accesskey "f">
-<!ENTITY toolbarbutton.tooltip "Visa programinformation">
-
-<!ENTITY openinfo.label "Öppna informationsfönstret...">
-<!ENTITY openoptions.label "Inställningar för InfoLister...">
-<!ENTITY upload.label "Överför information">

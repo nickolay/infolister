@@ -1,7 +1,0 @@
-<!ENTITY brandname.label "InfoLister">
-<!ENTITY brandname.accesskey "f">
-<!ENTITY toolbarbutton.tooltip "Show application information">
-
-<!ENTITY openinfo.label "Open Information window...">
-<!ENTITY openoptions.label "InfoLister options...">
-<!ENTITY upload.label "Upload information">

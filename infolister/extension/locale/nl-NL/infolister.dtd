@@ -1,7 +1,0 @@
-<!ENTITY title "InfoLister">
-<!ENTITY desc "Dit is informatie over de applicaties. Deze kan aangepast worden door op onderstaande Optiesknop te klikken">
-<!ENTITY hint.about.info "Deze informatie kan ook direct in de browser bekeken worden door &apos;about:info&apos; (zonder aanhalingstekens) in de adresbalk te typen.">
-<!ENTITY save "Opslaan...">
-<!ENTITY upload "Upload">
-<!ENTITY prefs "Opties...">
-<!ENTITY close "Sluiten">

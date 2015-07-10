@@ -1,8 +1,0 @@
-<!ENTITY title "InfoLister オプション">
-<!ENTITY prefwindow.style "幅: 40em;">
-<!ENTITY prefwindow.fixedheight "28em">
-<!ENTITY apply "適用">
-<!ENTITY apply.accesskey "A">
-<!ENTITY general_tab "全般">
-<!ENTITY pattern_tab "出力のカスタマイズ">
-<!ENTITY upload_tab "アップロード">

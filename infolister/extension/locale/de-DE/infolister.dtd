@@ -1,9 +1,0 @@
-<!ENTITY title "InfoLister - Programminformationen">
-
-<!ENTITY desc "Im Folgenden sehen Sie die Informationen zu Ihrer Programmkonfiguration. Die Anzeige lässt sich über die untere Schaltfläche &quot;Einstellungen...&quot; anpassen.">
-<!ENTITY hint.about.info "Diese Übersicht kann auch direkt im Browser angezeigt werden, indem Sie &quot;about:info&quot; (ohne Anführungszeichen) in die Adressleiste eingeben.">
-
-<!ENTITY save "Speichern...">
-<!ENTITY upload "Upload">
-<!ENTITY prefs "Einstellungen...">
-<!ENTITY close "Schließen">

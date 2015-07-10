@@ -1,7 +1,0 @@
-<!ENTITY title "InfoLister">
-<!ENTITY desc "這裡列出了此應用程式的相關資訊，按下面的「選項」鈕可以自訂此處的資訊。">
-<!ENTITY hint.about.info "你也可以直接在位址列中輸入「about:info」檢視 InfoLister 提供的資訊。">
-<!ENTITY save "儲存...">
-<!ENTITY upload "上傳">
-<!ENTITY prefs "選項...">
-<!ENTITY close "關閉">
