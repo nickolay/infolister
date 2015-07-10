@@ -1,13 +1,19 @@
 InfoLister changelog.
 
+0.10.5a1 [2015-07-10]
+- Moved the project to GitHub (the old site and Google Code are dead);
+- Removed dependency on Addon SDK, since the support for XUL extensions
+  in the SDK didn't work out.
+- Updated for Firefox 42 compatibility.
+
 0.10.4a4 [2014-06-30]
-- fixes for Firefox 30 compatibility
+- Fixes for Firefox 30 compatibility
 
 0.10.4a3 [2012-01-09]
-- small fix for Firefox 10 compatibility
+- Small fix for Firefox 10 compatibility
 <http://code.google.com/p/infolister/issues/detail?id=17>
-- updated Addon SDK source to its tip as of 2011-09-11
-- added custom update manifest, since I don't release at addons.mozilla.org at
+- Updated Addon SDK source to its tip as of 2011-09-11
+- Added custom update manifest, since I don't release at addons.mozilla.org at
 the time
 
 0.10.4a2 [2011-07-25]
@@ -15,8 +21,8 @@ the time
 - Small bugfixes for the infolister button <http://code.google.com/p/infolister/source/detail?r=f9b2787ba5>
 - Removed vestiges of Nvu & Sunbird support (the applications themselves
   have been discontinued)
-- added sv-SE translation (thanks Mikael Hiort af Ornäs!)
-- update to the latest Addon SDK, reducing the XPI size.
+- Added sv-SE translation (thanks Mikael Hiort af Ornäs!)
+- Update to the latest Addon SDK, reducing the XPI size.
 
 0.10.4a1 [2011-01-26]
 - Firefox 4, Thunderbird 3.1 - 3.3 compatibility
@@ -73,7 +79,7 @@ Changes in 0.9c:
 - mark the selected theme as such (fix for regression)
 - handle unicode characters correctly when displaying and uploading the list
 - Small tweaks to the options window, now linking to help on templates at
-    <http://mozilla.doslash.org/infolister/templates/>
+    <http://nickolay.github.io/infolister/templates/>
 
 Changes in 0.9b:
 - Firefox / Thunderbird 1.5 compatibility
