@@ -1,7 +1,7 @@
 #!/bin/bash
 
-pushd `dirname $0`/infolister/extension
-zip -r ../../infolister.xpi .
+pushd `dirname $0`/extension
+zip -r ../infolister.xpi .
 popd
 
 pushd `dirname $0`
