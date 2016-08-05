@@ -25,6 +25,16 @@ Packaging
 ---------
 To create the XPI just create a zip archive with the contents of the `extension/` directory (not including the directory itself!). See the `build.sh` script for an example.
 
+Releasing new version
+---------------------
+
+1. Update the version number in `extension/install.rdf`
+2. `git tag VERSIONNUMBER`.
+3. git push --tags
+4. publish to git pages
+5. Update changelog.txt & index.html
+6. Publish to AMO
+
 Documentation
 -------------
 The InfoLister website (https://nickolay.github.io/infolister/) is maintained in a separate branch of this repository (`gh-pages`).
