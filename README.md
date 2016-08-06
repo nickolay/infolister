@@ -12,7 +12,8 @@ Development
 1. git clone https://github.com/nickolay/infolister.git
 2. Create an empty `profile` folder, and `profile/extensions/` inside it.
 3. Create a file named ``{3f0da09b-c1ab-40c5-8d7f-53f475ac3fe8}` inside the `profile/extensions` directory. Put the full path to `(infolister clone)/extension/` in the file.
-4. Run firefox.exe (or `Firefox.app/Contents/MacOS/firefox-bin` on OS X) with the following parameters: ``-foreground -no-remote -profile full/path/to/profile`.
+4. Add `user_pref("xpinstall.signatures.required", false);` to profile/prefs.js
+5. Run firefox.exe (or `Firefox.app/Contents/MacOS/firefox-bin` on OS X) with the following parameters: ``-foreground -no-remote -profile full/path/to/profile`.
 
 An example start script I use on Mac OS X is checked into the root of this repository (nightly.sh).
 
