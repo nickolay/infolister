@@ -20,9 +20,11 @@ const oldEM = ("@mozilla.org/extensions/manager;1" in components.classes);
 const XMLNS_EM = "http://www.mozilla.org/2004/em-rdf#";
 
 var gRDF = ILHelpers.getService("rdf/rdf-service;1", "nsIRDFService");
-__defineGetter__("extensionDS", function() {
-  return ILHelpers.getService("extensions/manager;1", "nsIExtensionManager").datasource;
-})
+var gDSHolder = {
+  get extensionDS() {
+    return ILHelpers.getService("extensions/manager;1", "nsIExtensionManager").datasource;
+  }
+};
 
 // available extensions.rdf arcs
 var emArcs = {name: "", version: "",
@@ -46,7 +48,7 @@ var typeArc = gRDF.GetResource(XMLNS_EM + "type");
 
 // read the (literal) value pointed to by |aArcName| arc from |aNode|
 function getValue(aNode, aArcName) {
-  var target = extensionDS.GetTarget(aNode, emArcs[aArcName], true);
+  var target = gDSHolder.extensionDS.GetTarget(aNode, emArcs[aArcName], true);
   try {
     return ILHelpers.QI(target, "nsIRDFLiteral").Value;
   } catch(e) {}
@@ -58,7 +60,7 @@ function getValue(aNode, aArcName) {
 function getItemsOfType(aType) {
   var root = gRDF.GetResource("urn:mozilla:" + aType + ":root");
   var container = ILHelpers.createInstance("rdf/container;1", "nsIRDFContainer");
-  container.Init(extensionDS, root);
+  container.Init(gDSHolder.extensionDS, root);
   return container.GetElements();
 }
 
@@ -67,7 +69,7 @@ function getItemsOfType(aType) {
 // Returns "ext" if the given RDF item's type arc says it's an extension,
 // "theme" if it's a theme.
 function getItemType(aNode) {
-  var target = extensionDS.GetTarget(aNode, typeArc, true);
+  var target = gDSHolder.extensionDS.GetTarget(aNode, typeArc, true);
   var type = ILHelpers.QI(target, "nsIRDFInt").Value;
   switch(type) {
     case 2: return "ext";
