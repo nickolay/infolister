@@ -1,5 +1,9 @@
 InfoLister changelog.
 
+0.10.5a2 [2016-08-06]
+- Fixes for Firefox 48 compatibility.
+
+
 0.10.5a1 [2015-07-10]
 - Moved the project to GitHub (the old site and Google Code are dead);
 - Removed dependency on Addon SDK, since the support for XUL extensions
@@ -7,7 +11,7 @@ InfoLister changelog.
 - Updated for Firefox 42 compatibility.
 
 0.10.4a4 [2014-06-30]
-- Fixes for Firefox 30 compatibility
+- Fixes for Firefox 30 compatibility.
 
 0.10.4a3 [2012-01-09]
 - Small fix for Firefox 10 compatibility
