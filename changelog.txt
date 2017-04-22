@@ -1,5 +1,9 @@
 InfoLister changelog.
 
+0.10.5a3 [2017-04-23]
+- Fixes for Firefox 53 compatibility
+(<https://github.com/nickolay/infolister/issues/25>)
+
 0.10.5a2 [2016-08-06]
 - Fixes for Firefox 48 compatibility.
 
