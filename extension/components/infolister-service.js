@@ -652,6 +652,10 @@ InfoListerChannel.prototype = {
   {
     throw Components.results.NS_ERROR_NOT_IMPLEMENTED;
   },
+
+  asyncOpen2: function (aObserver) {
+    this.asyncOpen(aObserver, null);
+  },
   
   asyncOpen: function (aObserver, aContext)
   {
@@ -755,9 +759,9 @@ XPCOMUtils.defineLazyGetter(this, "commonModule", function() {
   Components.utils.import("resource://infolister/common.js", commonModule);
   return globalObject.commonModule = commonModule;
 });
-XPCOMUtils.defineLazyGetter(this, "InfoListerWindows", function() commonModule.InfoListerWindows);
-XPCOMUtils.defineLazyGetter(this, "ILHelpers", function() commonModule.ILHelpers);
-XPCOMUtils.defineLazyGetter(this, "ILPrefs", function() commonModule.ILPrefs);
+XPCOMUtils.defineLazyGetter(this, "InfoListerWindows", () => commonModule.InfoListerWindows);
+XPCOMUtils.defineLazyGetter(this, "ILHelpers", () => commonModule.ILHelpers);
+XPCOMUtils.defineLazyGetter(this, "ILPrefs", () => commonModule.ILPrefs);
 function getInfoListerService() {
   return Components.classes["@mozilla.doslash.org/infolister/service;1"].
     getService(Components.interfaces.nsISupports).wrappedJSObject;
