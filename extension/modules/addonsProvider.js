@@ -160,7 +160,7 @@ var gAddonsProvider = {
     }
     
     function getItemsFromAddonManager(amAddons) {
-      for each (addon in amAddons) {
+      for (addon of amAddons) {
         var addonJSON = {name: addon.name, id: addon.id};
         if (addon.type == "extension")
           addonJSON.type = "ext";

@@ -46,7 +46,7 @@ exports.collectData = function collectData(needRecollect, requiredElements, have
     insertLinebreak(doc.documentElement);
     insertLinebreak(infoElt);
     
-    for each (var nodeName in requiredElements) {
+    for (var nodeName of requiredElements) {
       var elt = doc.createElement(nodeName);
       infoElt.appendChild(elt);
       insertLinebreak(infoElt);
